@@ -1,7 +1,8 @@
 import React from 'react';
 import LogoutIcon from '@mui/icons-material/Logout';
+import AssignmentIcon from '@mui/icons-material/Assignment';
 import {
-  AppBar, Container, Box, Button,
+  AppBar, Container, Box, Button, Typography,
 } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -50,8 +51,16 @@ const Navbar = () => {
         }}
         >
           <Box sx={{ display: 'flex' }}>
-            <NavLink to={routes.HomePage}>Pagrindinis</NavLink>
-            <NavLink to={routes.BoardPage}>Tvarkyklė</NavLink>
+            <NavLink to={routes.HomePage}>
+              <AssignmentIcon />
+              <Typography sx={{ fontWeight: 700 }}>Tasky</Typography>
+            </NavLink>
+            {
+               state.loggedIn
+                 ? <NavLink to={routes.BoardPage}>Tvarkyklė</NavLink>
+                 : null
+            }
+
           </Box>
           {
             state.loggedIn

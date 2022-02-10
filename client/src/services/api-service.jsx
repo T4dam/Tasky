@@ -1,23 +1,13 @@
-const fakeFetch = ({ email, password }) => new Promise(((success, failure) => {
-  setTimeout(() => {
-    if (email === 'admin@gmail.com' && password === 'Keturkojis1') {
-      success({
-        token: 'dfhgasdfbdndnfnfggjhgk',
-        user: {
-          id: '5165',
-          role: 'USER',
-          email: 'admin@gmail.com',
-        },
-      });
-    } else {
-      failure(new Error('Incorect email or/and password'));
-    }
-  }, 2000);
-}));
-
 const login = async ({ email, password }) => {
-  const response = await fakeFetch({ email, password });
-  return response;
+  const response = await fetch('http://localhost:5000/api/auth/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ email, password }),
+  });
+  const data = await response.json();
+  console.log(data);
 };
 const checkEmail = (email) => new Promise(((success) => {
   const existingEmails = ['admin@gmail.com', 'user1@gmail.com'];

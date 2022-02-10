@@ -28,8 +28,8 @@ const LoginPage = () => {
   
   const handleLogin = async ({email, password}) => {
       try {
-        const {token, user} = await APIservice.login({ email, password });
-        dispatch(LoginActionSuccess({token, user}));
+       await APIservice.login({ email, password });
+        // dispatch(LoginActionSuccess({token, user}));
       } catch (error) {
         console.log('--Nepavyko----');
         console.log(error);

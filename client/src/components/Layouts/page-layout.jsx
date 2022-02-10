@@ -8,7 +8,7 @@ const PageLayout = () => (
   <>
     <Navbar />
     {/* <Container sx={{ py: '10px' }}> */}
-    <Box sx={{ py: 2, px: 2 }}>
+    <Box>
       <Outlet />
     </Box>
     {/* </Container> */}

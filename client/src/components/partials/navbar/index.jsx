@@ -37,7 +37,7 @@ const Navbar = () => {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(logout);
+    dispatch(logout());
   };
 
   return (
@@ -66,7 +66,7 @@ const Navbar = () => {
               ? (
                 <Box>
 
-                  <Button style={mycolor} sx={{ my: 1 }} variant="text" onClick={() => handleLogout()}>
+                  <Button style={mycolor} sx={{ my: 1 }} variant="text" onClick={handleLogout}>
                     <LogoutIcon sx={{ fontSize: 20 }} />
                     <Box sx={{ pl: '3px' }}>Atsijungti</Box>
                   </Button>

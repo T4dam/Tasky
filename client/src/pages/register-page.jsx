@@ -8,7 +8,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import AuthForm from '../components/Form';
-import apiService from '../services/api-service';
+import AuthService from '../services/auth-service';
 
 const initialValues = {
   name: '',
@@ -63,7 +63,7 @@ const RegisterPage = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const onSubmit = async ({ emailChecked, emailAvailable, ...formData }) => {
-    const result = await apiService.register(formData);
+    const result = await AuthService.register(formData);
     console.log('Registracija pavyko', result);
   };
 
@@ -103,7 +103,7 @@ const RegisterPage = () => {
     if (!errors.email) {
       setIsLoading(true);
       (async () => {
-        const emailAvailable = await apiService.checkEmail(values.email);
+        const emailAvailable = await AuthService.checkEmail(values.email);
         setFieldValue('emailChecked', true);
         setFieldValue('emailAvailable', emailAvailable);
         setIsLoading(false);

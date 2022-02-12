@@ -6,9 +6,8 @@ import {
 } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { logoutAction } from '../../../store/auth/action-creators';
+import { logout, selectAuth } from '../../../store/auth';
 import NavLink from './navbar-link';
-import { authSelector } from '../../../store/auth/selectors';
 import routes from '../../../Routes/routes';
 
 const darkTheme = createTheme({
@@ -34,11 +33,11 @@ const mycolor = {
 };
 
 const Navbar = () => {
-  const state = useSelector(authSelector);
+  const state = useSelector(selectAuth);
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(logoutAction);
+    dispatch(logout);
   };
 
   return (

@@ -1,11 +1,11 @@
 /*eslint-disable*/
-import React, { useState } from 'react';
-import { TextField, Grid } from '@mui/material';
-import {useDispatch} from 'react-redux'
-import {LoginActionSuccess} from '../store/auth/action-creators'
+import React, {useState} from 'react';
+import { TextField, Grid, Alert, IconButton } from '@mui/material';
 import AuthFrom from '../components/Form';
-import APIservice from '../services/api-service';
+import CloseIcon from '@mui/icons-material/Close';
+import AuthService from '../services/auth-service';
 import { useFormik } from 'formik';
+import { useSearchParams } from 'react-router-dom';
 import * as yup from 'yup';
 
 const initialValues = {
@@ -23,18 +23,19 @@ const validationSchema = yup.object({
     .required('Norint prisjungti būtinai įveskite slaptažodį'),
 });
 
-const LoginPage = () => {
-  const dispatch = useDispatch()
   
-  const handleLogin = async ({email, password}) => {
+  const LoginPage = () => {
+    const [searchParams] = useSearchParams();
+    const [errorMsg, setErrorMsg] = useState(null);
+  
+    const handleLogin = async ({ email, password }) => {
       try {
-       await APIservice.login({ email, password });
-        // dispatch(LoginActionSuccess({token, user}));
+        const redirectTo = searchParams.get('redirectTo');
+        await AuthService.login({ email, password }, redirectTo);
       } catch (error) {
-        console.log('--Nepavyko----');
-        console.log(error);
-      } 
-  };
+        setErrorMsg(error.message);
+      }
+    };
   const {values,
     handleChange,
     errors,
@@ -64,8 +65,33 @@ const LoginPage = () => {
       isValid= {dirty && isValid}
       loading={isSubmitting}
     >
+       <Grid container spacing={3}>
+        {
+          errorMsg
+            ? (
+              <Grid item xs={12}>
+                <Alert
+                  severity="error"
+                  action={(
+                    <IconButton
+                      aria-label="close"
+                      color="inherit"
+                      size="small"
+                      onClick={() => setErrorMsg(null)}
+                    >
+                      <CloseIcon fontSize="inherit" />
+                    </IconButton>
+                )}
 
-      <Grid container spacing={3}>
+                >
+                  {errorMsg}
+                </Alert>
+              </Grid>
+            )
+            : null
+        }
+
+      
         <Grid item xs={12}>
           <TextField
             id="email"

@@ -15,7 +15,22 @@
       "name": "Adminas",
       "surname": "Gediminas",
       "role": "USER"
+    },
+    {
+      "id": "7d35dcda-a140-48f5-83b1-d68be30a803c",
+      "email": "test@test.lt",
+      "name": "Tadas",
+      "surname": "Delininkaaaai",
+      "password": "Keturkojis1",
+      "role": "USER"
+    },
+    {
+      "id": "4ae8a302-d469-400a-b821-bbf7f4ac5d6f",
+      "email": "admcvbin@gmail.com",
+      "name": "Tadas",
+      "surname": "Delininkaaaai",
+      "password": "Keturkojis1",
+      "role": "USER"
     }
-    
   ]
 }

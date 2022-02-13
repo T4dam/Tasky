@@ -29,12 +29,12 @@ const Banner = () => (
     >
       <source src={banner} type="video/mp4" />
     </video>
-    <Box sx={{ position: 'absolute', left: '23%', top: '23%' }}>
+    <Box sx={{ position: 'absolute', left: '15%', top: '17%' }}>
       <Typography
         variant="h1"
         color="white"
         sx={{
-          display: 'block', fontWeight: 600, textTransform: 'upperCase', fontSize: '6rem',
+          display: 'block', fontWeight: 600, textTransform: 'upperCase', fontSize: '4rem',
         }}
       >
         Virtualus
@@ -43,7 +43,7 @@ const Banner = () => (
         variant="h1"
         color="white"
         sx={{
-          display: 'block', fontWeight: 600, textTransform: 'upperCase', fontSize: 'įrem',
+          display: 'block', fontWeight: 600, textTransform: 'upperCase', fontSize: '4rem',
         }}
       >
         įrankis

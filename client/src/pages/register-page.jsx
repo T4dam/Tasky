@@ -12,7 +12,7 @@ import AuthService from '../services/auth-service';
 
 const initialValues = {
   name: '',
-  surename: '',
+  surname: '',
   email: '',
   password: '',
   repeatPassword: '',
@@ -28,7 +28,7 @@ const validationSchema = yup.object({
     .min(2, 'Įveskite savo pilną vardą')
     .max(16, 'Vardas negali viršyti 16 simbolių')
     .matches(/^[a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ]+$/, 'Vardas negali turėti kitų simbilių apart raidžių'),
-  surename: yup
+  surname: yup
     .string()
     .required('Įveskite savo pavardę')
     .min(2, 'Įveskite savo pilną pavardę')
@@ -62,9 +62,13 @@ const validationSchema = yup.object({
 const RegisterPage = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const onSubmit = async ({ emailChecked, emailAvailable, ...formData }) => {
-    const result = await AuthService.register(formData);
-    console.log('Registracija pavyko', result);
+  const handleRegister = async ({
+    emailChecked,
+    emailAvailable,
+    subscribed,
+    ...formData
+  }) => {
+    await AuthService.register(formData);
   };
 
   const {
@@ -82,9 +86,8 @@ const RegisterPage = () => {
   } = useFormik({
     initialValues,
     validationSchema,
-    onSubmit,
+    onSubmit: handleRegister,
   });
-  console.log(values);
   const handleEmailChange = (e) => {
     if (values.emailChecked) {
       setValues({
@@ -151,16 +154,16 @@ const RegisterPage = () => {
         </Grid>
         <Grid item xs={12}>
           <TextField
-            id="surename"
+            id="surname"
             label="Pavardė"
             variant="outlined"
             fullWidth
-            name="surename"
+            name="surname"
             autoComplete="name"
-            value={values.surename}
+            value={values.surname}
             onChange={handleChange}
-            error={touched.surename && errors.surename}
-            helperText={touched.surename && errors.surename}
+            error={touched.surname && errors.surname}
+            helperText={touched.surname && errors.surname}
             onBlur={handleBlur}
             disabled={isSubmitting}
           />

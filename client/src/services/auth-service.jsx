@@ -14,8 +14,8 @@ const login = async ({ email, password }, redirectTo) => {
 
   if (response.status === 200) {
     const { user, token } = data;
-    const loginSuccess = authSlice.login({ user, token, redirectTo });
-    store.dispatch(loginSuccess);
+    const reduxAction = authSlice.login({ user, token, redirectTo });
+    store.dispatch(reduxAction);
     return true;
   }
 
@@ -30,11 +30,26 @@ const checkEmail = (email) => new Promise(((success) => {
   }, 1000);
 }));
 
-const register = () => new Promise(((success) => {
-  setTimeout(() => {
-    success(true);
-  }, 2000);
-}));
+const register = async (body) => {
+  const response = await fetch('http://localhost:5000/api/auth/register', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  });
+
+  const data = await response.json();
+
+  if (response.status === 200) {
+    const { user, token } = data;
+    const reduxAction = authSlice.login({ user, token });
+    store.dispatch(reduxAction);
+    return true;
+  }
+
+  throw new Error(data.message);
+};
 
 export default {
   login,

@@ -1,18 +1,18 @@
+import axios from 'axios';
 import store from '../store/index';
 import * as authSlice from '../store/auth';
 
+const reqInstance = axios.create({
+  baseURL: 'http://localhost:5000/api/auth/',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
 const login = async ({ email, password }, redirectTo) => {
-  const response = await fetch('http://localhost:5000/api/auth/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, password }),
-  });
+  const { data, status } = await reqInstance.post('/login', { email, password });
 
-  const data = await response.json();
-
-  if (response.status === 200) {
+  if (status === 200) {
     const { user, token } = data;
     const reduxAction = authSlice.login({ user, token, redirectTo });
     store.dispatch(reduxAction);
@@ -22,26 +22,15 @@ const login = async ({ email, password }, redirectTo) => {
   throw new Error(data.message);
 };
 
-const checkEmail = (email) => new Promise(((success) => {
-  const existingEmails = ['admin@gmail.com', 'user1@gmail.com'];
-  setTimeout(() => {
-    const emailAvailable = !existingEmails.includes(email);
-    success(emailAvailable);
-  }, 1000);
-}));
+const checkEmail = async (email) => {
+  const { data } = await reqInstance.get(`/check-email?email=${email}`);
+  return data.available;
+};
 
 const register = async (body) => {
-  const response = await fetch('http://localhost:5000/api/auth/register', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(body),
-  });
+  const { data, status } = await reqInstance.post('/register', body);
 
-  const data = await response.json();
-
-  if (response.status === 200) {
+  if (status === 200) {
     const { user, token } = data;
     const reduxAction = authSlice.login({ user, token });
     store.dispatch(reduxAction);

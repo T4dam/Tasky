@@ -11,7 +11,7 @@ router.post('/register', register);
 
 router.post('/login', login);
 
-router.get('/checkEmail', checkEmail);
+router.get('/check-email', checkEmail);
 
 export default router;
 

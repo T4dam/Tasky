@@ -15,30 +15,7 @@
       "name": "Adminas",
       "surname": "Gediminas",
       "role": "USER"
-    },
-    {
-      "id": "f240d83b-ff11-4d88-b06f-b1c5727b8a9a",
-      "email": "adminass@gmail.com",
-      "name": "Kepalas",
-      "surname": "Rugio",
-      "password": "Keturkojis1",
-      "role": "USER"
-    },
-    {
-      "id": "a00e1995-7a59-4848-8fce-62e7af6d8554",
-      "email": "Hugo@gmksa.lt",
-      "name": "Gediminas",
-      "surname": "Jukorius",
-      "password": "Keturkojis1",
-      "role": "USER"
-    },
-    {
-      "id": "8755f733-c173-427c-b25c-a862ded1b390",
-      "email": "adsmin@gmail.com",
-      "name": "Tadas",
-      "surname": "Delininkaaaai",
-      "password": "Keturkojis1",
-      "role": "USER"
     }
+    
   ]
 }

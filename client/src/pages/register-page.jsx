@@ -145,7 +145,7 @@ const RegisterPage = () => {
             name="name"
             value={values.name}
             onChange={handleChange}
-            error={touched.name && errors.name}
+            error={touched.name && Boolean(errors.name)}
             helperText={touched.name && errors.name}
             onBlur={handleBlur}
             disabled={isSubmitting}
@@ -162,7 +162,7 @@ const RegisterPage = () => {
             autoComplete="name"
             value={values.surname}
             onChange={handleChange}
-            error={touched.surname && errors.surname}
+            error={touched.surname && Boolean(errors.surname)}
             helperText={touched.surname && errors.surname}
             onBlur={handleBlur}
             disabled={isSubmitting}
@@ -181,7 +181,7 @@ const RegisterPage = () => {
             name="email"
             value={values.email}
             onChange={handleEmailChange}
-            error={touched.email && errors.email}
+            error={touched.email && Boolean(errors.email)}
             helperText={touched.email && errors.email}
             onBlur={handleEmailBlur}
             disabled={isSubmitting}
@@ -197,7 +197,7 @@ const RegisterPage = () => {
             name="password"
             value={values.password}
             onChange={handleChange}
-            error={touched.password && errors.password}
+            error={touched.password && Boolean(errors.password)}
             helperText={touched.password && errors.password}
             onBlur={handleBlur}
             disabled={isSubmitting}
@@ -213,7 +213,7 @@ const RegisterPage = () => {
             name="repeatPassword"
             value={values.repeatPassword}
             onChange={handleChange}
-            error={touched.repeatPassword && errors.repeatPassword}
+            error={touched.repeatPassword && Boolean(errors.repeatPassword)}
             helperText={touched.repeatPassword && errors.repeatPassword}
             onBlur={handleBlur}
             disabled={isSubmitting}

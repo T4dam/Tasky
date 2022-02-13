@@ -31,6 +31,14 @@
       "surname": "Jukorius",
       "password": "Keturkojis1",
       "role": "USER"
+    },
+    {
+      "id": "8755f733-c173-427c-b25c-a862ded1b390",
+      "email": "adsmin@gmail.com",
+      "name": "Tadas",
+      "surname": "Delininkaaaai",
+      "password": "Keturkojis1",
+      "role": "USER"
     }
   ]
 }

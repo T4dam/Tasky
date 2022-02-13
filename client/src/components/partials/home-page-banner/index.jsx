@@ -12,7 +12,7 @@ const HeroLink = styled(Link)({
 });
 
 const Banner = () => (
-  <>
+  <Box>
     <video
       autoPlay
       loop
@@ -76,7 +76,7 @@ const Banner = () => (
         <HeroLink to={routes.BoardPage}>Išbandyk</HeroLink>
       </Fab>
     </Box>
-  </>
+  </Box>
 );
 
 export default Banner;

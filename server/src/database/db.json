@@ -31,6 +31,14 @@
       "surname": "Delininkaaaai",
       "password": "Keturkojis1",
       "role": "USER"
+    },
+    {
+      "id": "e3ba3494-499c-4486-9901-f93bfddc0190",
+      "email": "admidsdsn@gmail.com",
+      "name": "Tadas",
+      "surname": "Delininkaaaai",
+      "password": "Keturkojis1",
+      "role": "USER"
     }
   ]
 }

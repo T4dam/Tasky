@@ -192,6 +192,7 @@ const RegisterPage = () => {
             id="password"
             label="Slaptažodis"
             variant="outlined"
+            type="password"
             fullWidth
             autoComplete="email"
             name="password"
@@ -209,6 +210,7 @@ const RegisterPage = () => {
             label="Pakartokite slaptažodį"
             variant="outlined"
             fullWidth
+            type="password"
             autoComplete="email"
             name="repeatPassword"
             value={values.repeatPassword}

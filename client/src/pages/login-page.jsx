@@ -115,8 +115,9 @@ const validationSchema = yup.object({
             label="Slaptažodis"
             variant="outlined"
             fullWidth
+            type='password'
             required
-            autoComplete="email"
+            autoComplete="password"
             name="password"
             value={values.password}
             onBlur={handleBlur}

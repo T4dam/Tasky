@@ -38,8 +38,12 @@ const Banner = () => (
         }}
       >
         Virtualus
+        <br />
+        įrankis
+        <br />
+        Planuotojams
       </Typography>
-      <Typography
+      {/* <Typography
         variant="h1"
         color="white"
         sx={{
@@ -55,8 +59,8 @@ const Banner = () => (
           display: 'block', fontWeight: 600, textTransform: 'upperCase', fontSize: '4rem',
         }}
       >
-        Planuojantiems
-      </Typography>
+        Planuotojams
+      </Typography> */}
       <Typography
         variant="h1"
         color="white"

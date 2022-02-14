@@ -23,7 +23,7 @@ const Banner = () => (
         top: 0,
         left: 0,
         zIndex: -1,
-        height: '85vh',
+        height: '87vh',
         objectFit: 'cover',
       }}
     >

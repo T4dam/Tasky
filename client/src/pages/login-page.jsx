@@ -115,7 +115,6 @@ const validationSchema = yup.object({
             label="Slaptažodis"
             variant="outlined"
             fullWidth
-            type='password'
             required
             autoComplete="password"
             name="password"

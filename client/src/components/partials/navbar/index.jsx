@@ -1,14 +1,15 @@
 import React from 'react';
-import LogoutIcon from '@mui/icons-material/Logout';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import {
-  AppBar, Container, Box, Button, Typography,
+  AppBar, Container, Box, Typography,
 } from '@mui/material';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { logout, selectAuth } from '../../../store/auth';
+import { Link } from 'react-router-dom';
+import { selectAuth } from '../../../store/auth';
 import NavLink from './navbar-link';
 import routes from '../../../Routes/routes';
+import NavbarMeniu from './navbar-meniu';
 
 const darkTheme = createTheme({
   palette: {
@@ -18,42 +19,24 @@ const darkTheme = createTheme({
     },
   },
 });
-const mycolor = {
-  textTransform: 'none',
-  fontSize: '16px',
-  color: '#eeeeee',
-  opacity: 0.75,
-  ':hover': {
-    opacity: 1,
-  },
-  '&.active': {
-    opacity: 1,
-  },
-
-};
 
 const Navbar = () => {
   const state = useSelector(selectAuth);
-  const dispatch = useDispatch();
-
-  const handleLogout = () => {
-    dispatch(logout());
-  };
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar position="static" color="primary" sx={{ height: 48 }}>
+      <AppBar position="static" color="primary" sx={{ height: 50 }}>
         <Container sx={{
           height: '100%',
           display: 'flex',
           justifyContent: 'space-between',
         }}
         >
-          <Box sx={{ display: 'flex' }}>
-            <NavLink to={routes.HomePage}>
-              <AssignmentIcon />
-              <Typography sx={{ fontWeight: 700 }}>Tasky</Typography>
-            </NavLink>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+            <Link to={routes.HomePage} style={{ display: 'flex', textDecoration: 'none' }}>
+              <AssignmentIcon sx={{ fontWeight: 700, textDecoration: 'none', color: 'white' }} />
+              <Typography sx={{ fontWeight: 700, textDecoration: 'none', color: 'white' }}>Tasky</Typography>
+            </Link>
             {
                state.loggedIn
                  ? <NavLink to={routes.BoardPage}>Tvarkyklė</NavLink>
@@ -64,12 +47,8 @@ const Navbar = () => {
           {
             state.loggedIn
               ? (
-                <Box>
-
-                  <Button style={mycolor} sx={{ my: 1 }} variant="text" onClick={handleLogout}>
-                    <LogoutIcon sx={{ fontSize: 20 }} />
-                    <Box sx={{ pl: '3px' }}>Atsijungti</Box>
-                  </Button>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                  <NavbarMeniu />
                 </Box>
               )
               : (

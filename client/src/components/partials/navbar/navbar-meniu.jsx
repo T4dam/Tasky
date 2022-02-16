@@ -32,7 +32,7 @@ const NavbarMeniu = () => {
     <>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
         <Typography fontSize={14}>{`${user.name} ${user.surname}`}</Typography>
-        <Tooltip title="Account settings">
+        <Tooltip title="Nustatymai">
           <IconButton
             onClick={handleClick}
             size="small"

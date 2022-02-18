@@ -4,6 +4,7 @@ import LoginPage from '../pages/login-page';
 import RegisterPage from '../pages/register-page';
 import ErrorPage from '../pages/error-page';
 import BoardPage from '../pages/board-page';
+import Dashboard from '../components/Layouts/dashboard-layout/dashboard';
 
 export default {
   PageLayout,
@@ -12,5 +13,5 @@ export default {
   RegisterPage,
   ErrorPage,
   BoardPage,
-
+  Dashboard,
 };

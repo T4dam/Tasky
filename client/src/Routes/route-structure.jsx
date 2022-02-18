@@ -29,6 +29,21 @@ export default [
         path: '*',
         pageName: 'ErrorPage',
       },
+      // {
+      //   path: 'dash',
+      //   pageName: 'Dashboard',
+      // },
+    ],
+  },
+  {
+    path: '/dash',
+    pageName: 'Dashboard',
+    children: [
+      {
+        path: null,
+        pageName: 'BoardPage',
+        auth: LOGGED_IN,
+      },
     ],
   },
 

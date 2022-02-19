@@ -39,7 +39,7 @@ const Banner = () => (
             variant="h1"
             color="white"
             sx={{
-              display: 'block', fontWeight: 700, textTransform: 'upperCase', fontSize: { xs: '2rem', sm: '4rem' }, lineHeight: '1',
+              display: 'block', fontWeight: 700, textTransform: 'upperCase', fontSize: { xs: '2rem', md: '4rem' }, lineHeight: '1',
             }}
           >
 

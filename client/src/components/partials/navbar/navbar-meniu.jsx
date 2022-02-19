@@ -31,7 +31,7 @@ const NavbarMeniu = () => {
   return (
     <>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <Typography fontSize={14}>{`${user.name} ${user.surname}`}</Typography>
+        <Typography sx={{ display: { xs: 'none', sm: 'block' } }} fontSize={14}>{`${user.name} ${user.surname}`}</Typography>
         <Tooltip title="Nustatymai">
           <IconButton
             onClick={handleClick}

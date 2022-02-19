@@ -4,6 +4,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import MuiAppBar from '@mui/material/AppBar';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const drawerWidth = 240;
 
@@ -25,47 +26,60 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
+const darkTheme = createTheme({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#1976d2',
+    },
+  },
+});
 const NavbarContainer = ({
   navbarStyle, children, open, handleDrawerOpen,
 }) => {
   if (navbarStyle === 'dash') {
     return (
-      <AppBar
-        position="fixed"
-        open={open}
-        sx={{
-          height: 50, display: 'flex', justifyContent: 'center', alignItems: 'spaceBetween',
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: '36px',
-              ...(open && { display: 'none' }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-          {children}
-        </Toolbar>
-      </AppBar>
+      <ThemeProvider theme={darkTheme}>
+        <AppBar
+          position="fixed"
+          open={open}
+          sx={{
+            color: 'secondary', height: 50, display: 'flex', justifyContent: 'center', alignItems: 'spaceBetween',
+          }}
+        >
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{
+                marginRight: '36px',
+                ...(open && { display: 'none' }),
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
+            {children}
+          </Toolbar>
+        </AppBar>
+      </ThemeProvider>
     );
   }
   return (
-    <AppBar position="static" color="primary" sx={{ height: 50 }}>
-      <Container sx={{
-        height: '100%',
-        display: 'flex',
-        justifyContent: 'space-between',
-      }}
-      >
-        {children}
-      </Container>
-    </AppBar>
+    <ThemeProvider theme={darkTheme}>
+
+      <AppBar position="static" color="primary" sx={{ height: 50 }}>
+        <Container sx={{
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'space-between',
+        }}
+        >
+          {children}
+        </Container>
+      </AppBar>
+    </ThemeProvider>
   );
 };
 export default NavbarContainer;

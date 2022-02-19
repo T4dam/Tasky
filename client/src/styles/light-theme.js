@@ -10,6 +10,9 @@ const lightTheme = createTheme({
       main: '#FFC100',
       dark: '#E9AB08',
     },
+    secondary: {
+      main: '#252525',
+    },
   },
 });
 

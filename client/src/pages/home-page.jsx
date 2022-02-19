@@ -7,13 +7,11 @@ import Pic1 from '../assets/images/GuyNboard.svg';
 
 const HomePage = () => (
   <>
-    <Box height="85vh">
-      <Banner />
-    </Box>
+    <Banner />
     <Container>
 
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <Box sx={{ width: '70%', paddingRight: '10px' }}>
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center' }}>
+        <Box sx={{ width: { xs: '100%', sm: '70%' }, paddingRight: '10px' }}>
           <Typography sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum has been the industrys
@@ -28,15 +26,15 @@ const HomePage = () => (
             including versions of Lorem Ipsum.
           </Typography>
         </Box>
-        <Box sx={{ width: '50%', height: 'auto', paddingLeft: '10px' }}>
+        <Box sx={{ width: { xs: '100%', sm: '70%' }, height: 'auto', paddingLeft: '10px' }}>
           <img src={Pic1} alt="guy with the task board" />
         </Box>
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <Box sx={{ width: '50%', paddingRight: '10px' }}>
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column-reverse', md: 'row' }, alignItems: 'center' }}>
+        <Box sx={{ width: { xs: '100%', sm: '70%' }, paddingRight: '10px' }}>
           <img src={Pic1} alt="guy with the task board" />
         </Box>
-        <Box sx={{ width: '70%', height: 'auto', paddingLeft: '10px' }}>
+        <Box sx={{ width: { xs: '100%', sm: '70%' }, height: 'auto', paddingLeft: '10px' }}>
           <Typography sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum has been the industrys
@@ -52,8 +50,8 @@ const HomePage = () => (
           </Typography>
         </Box>
       </Box>
-      <Box sx={{ display: 'flex', alignItems: 'center' }}>
-        <Box sx={{ width: '70%', paddingRight: '10px' }}>
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center' }}>
+        <Box sx={{ width: { xs: '100%', sm: '70%' }, paddingRight: '10px' }}>
           <Typography sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum has been the industrys
@@ -68,7 +66,7 @@ const HomePage = () => (
             including versions of Lorem Ipsum.
           </Typography>
         </Box>
-        <Box sx={{ width: '50%', height: 'auto', paddingLeft: '10px' }}>
+        <Box sx={{ width: { xs: '100%', sm: '70%' }, height: 'auto', paddingLeft: '10px' }}>
           <img src={Pic1} alt="guy with the task board" />
         </Box>
       </Box>

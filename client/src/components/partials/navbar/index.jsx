@@ -1,7 +1,7 @@
 import React from 'react';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import {
-  AppBar, Container, Box, Typography,
+  Box, Typography,
 } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -10,6 +10,7 @@ import { selectAuth } from '../../../store/auth';
 import NavLink from './navbar-link';
 import routes from '../../../Routes/routes';
 import NavbarMeniu from './navbar-meniu';
+// import NavbarToggle from './navbar-container';
 
 const darkTheme = createTheme({
   palette: {
@@ -25,42 +26,35 @@ const Navbar = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar position="static" color="primary" sx={{ height: 50 }}>
-        <Container sx={{
-          height: '100%',
-          display: 'flex',
-          justifyContent: 'space-between',
-        }}
-        >
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-            <Link to={routes.HomePage} style={{ display: 'flex', textDecoration: 'none' }}>
-              <AssignmentIcon sx={{ fontWeight: 700, textDecoration: 'none', color: 'white' }} />
-              <Typography sx={{ fontWeight: 700, textDecoration: 'none', color: 'white' }}>Tasky</Typography>
-            </Link>
-            {
+      {/* <NavbarToggle navbarStyle={navbarStyle}> */}
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+        <Link to={routes.HomePage} style={{ display: 'flex', textDecoration: 'none' }}>
+          <AssignmentIcon sx={{ fontWeight: 700, textDecoration: 'none', color: 'white' }} />
+          <Typography sx={{ fontWeight: 700, textDecoration: 'none', color: 'white' }}>Tasky</Typography>
+        </Link>
+        {
                state.loggedIn
                  ? <NavLink to={routes.BoardPage}>Tvarkyklė</NavLink>
                  : null
             }
 
-          </Box>
-          {
-            state.loggedIn
-              ? (
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <NavbarMeniu />
-                </Box>
-              )
-              : (
-                <Box sx={{ display: 'flex' }}>
-                  <NavLink to={routes.LoginPage}>Prisijungimas</NavLink>
-                  <NavLink to={routes.RegisterPage}>Registracija</NavLink>
-                </Box>
+      </Box>
+      {
+          state.loggedIn
+            ? (
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <NavbarMeniu />
+              </Box>
+            )
+            : (
+              <Box sx={{ display: 'flex' }}>
+                <NavLink to={routes.LoginPage}>Prisijungimas</NavLink>
+                <NavLink to={routes.RegisterPage}>Registracija</NavLink>
+              </Box>
 
-              )
+            )
           }
-        </Container>
-      </AppBar>
+      {/* </NavbarToggle> */}
     </ThemeProvider>
   );
 };

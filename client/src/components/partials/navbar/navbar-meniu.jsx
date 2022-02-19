@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React from 'react';
 import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
@@ -12,9 +13,13 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import { useDispatch, useSelector } from 'react-redux';
 import { Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { logout, selectAuth } from '../../../store/auth';
+import routes from '../../../Routes/routes';
+import ProfilePage from '../../../pages/profile-page';
 
 const NavbarMeniu = () => {
+  const navigate = useNavigate();
   const { user } = useSelector(selectAuth);
   const dispatch = useDispatch();
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -27,6 +32,9 @@ const NavbarMeniu = () => {
   };
   const handleLogout = () => {
     dispatch(logout());
+  };
+  const handleTransitionToProfile = () => {
+    navigate(routes.ProfilePage);
   };
   return (
     <>
@@ -80,24 +88,24 @@ const NavbarMeniu = () => {
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
-        <MenuItem>
+        <MenuItem onClick={handleTransitionToProfile}>
           <Avatar />
           {' '}
           {' '}
-          Profile
+          Profilis
         </MenuItem>
         <Divider />
         <MenuItem>
           <ListItemIcon>
             <Settings fontSize="small" />
           </ListItemIcon>
-          Settings
+          Nustatymai
         </MenuItem>
         <MenuItem onClick={handleLogout}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
-          Logout
+          Atsijungti
         </MenuItem>
       </Menu>
     </>

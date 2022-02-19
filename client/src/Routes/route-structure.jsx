@@ -44,6 +44,11 @@ export default [
         pageName: 'BoardPage',
         auth: LOGGED_IN,
       },
+      {
+        path: 'profile',
+        pageName: 'ProfilePage',
+        auth: LOGGED_IN,
+      },
     ],
   },
 

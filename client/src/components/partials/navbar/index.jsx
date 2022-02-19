@@ -27,7 +27,10 @@ const Navbar = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       {/* <NavbarToggle navbarStyle={navbarStyle}> */}
-      <Box sx={{ display: 'flex', alignItems: 'center', width: 1 / 2 }}>
+      <Box sx={{
+        display: 'flex', alignItems: 'center', width: 1 / 2, gap: { xs: 2, sm: 4 },
+      }}
+      >
         <Link to={routes.HomePage} style={{ display: 'flex', textDecoration: 'none' }}>
           <AssignmentIcon sx={{ fontWeight: 700, textDecoration: 'none', color: 'white' }} />
           <Typography sx={{ fontWeight: 700, textDecoration: 'none', color: 'white' }}>Tasky</Typography>
@@ -52,7 +55,7 @@ const Navbar = () => {
             </Box>
           )
           : (
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{ display: 'flex', gap: { xs: 2, sm: 4 } }}>
               <NavLink to={routes.LoginPage}>Prisijungimas</NavLink>
               <NavLink to={routes.RegisterPage}>Registracija</NavLink>
             </Box>

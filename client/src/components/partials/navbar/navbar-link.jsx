@@ -5,7 +5,6 @@ import { styled } from '@mui/material';
 const EditedLink = styled(NavLink)(({ theme }) => ({
   textDecoration: 'none',
   display: 'flex',
-  padding: theme.spacing(0, 4),
   alignItems: 'center',
   height: '100%',
   color: theme.palette.grey[200],

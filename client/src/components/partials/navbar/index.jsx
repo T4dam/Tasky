@@ -10,7 +10,6 @@ import { selectAuth } from '../../../store/auth';
 import NavLink from './navbar-link';
 import routes from '../../../Routes/routes';
 import NavbarMeniu from './navbar-meniu';
-// import NavbarToggle from './navbar-container';
 
 const darkTheme = createTheme({
   palette: {
@@ -26,7 +25,6 @@ const Navbar = () => {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      {/* <NavbarToggle navbarStyle={navbarStyle}> */}
       <Box sx={{
         display: 'flex', alignItems: 'center', width: 1 / 2, gap: { xs: 2, sm: 4 },
       }}
@@ -63,7 +61,6 @@ const Navbar = () => {
           )
 }
       </Box>
-      {/* </NavbarToggle> */}
     </ThemeProvider>
   );
 };

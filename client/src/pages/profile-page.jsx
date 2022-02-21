@@ -1,5 +1,19 @@
 import React from 'react';
+import { Box, styled } from '@mui/material';
 
-const ProfilePage = () => <h1>Profile page</h1>;
+const pic = styled('img')(({ theme }) => ({
+  height: '80wh',
+  width: '80wh',
+  borderRadius: '50%',
+  objectFit: 'cover',
+  objectPosition: 'cover',
+
+}));
+
+const ProfilePage = () => (
+  <Box>
+    <img src="/person-placeholder.jpeg" alt="" />
+  </Box>
+);
 
 export default ProfilePage;

@@ -4,40 +4,16 @@
       "id": "1",
       "email": "admin@gmail.com",
       "password": "Keturkojis1",
-      "name": "Bembis",
-      "surname": "Mentis",
+      "name": "Jonas",
+      "surname": "Basanavičius",
       "role": "USER"
     },
     {
-      "id": "2",
-      "email": "admin@gmail.com",
-      "password": "Vilnius123",
-      "name": "Adminas",
-      "surname": "Gediminas",
-      "role": "USER"
-    },
-    {
-      "id": "7d35dcda-a140-48f5-83b1-d68be30a803c",
-      "email": "test@test.lt",
-      "name": "Tadas",
-      "surname": "Delininkaaaai",
-      "password": "Keturkojis1",
-      "role": "USER"
-    },
-    {
-      "id": "4ae8a302-d469-400a-b821-bbf7f4ac5d6f",
-      "email": "admcvbin@gmail.com",
-      "name": "Tadas",
-      "surname": "Delininkaaaai",
-      "password": "Keturkojis1",
-      "role": "USER"
-    },
-    {
-      "id": "e3ba3494-499c-4486-9901-f93bfddc0190",
-      "email": "admidsdsn@gmail.com",
-      "name": "Tadas",
-      "surname": "Delininkaaaai",
-      "password": "Keturkojis1",
+      "id": "110b3e49-e4b5-4505-a841-1531fab8f786",
+      "email": "test@test.com",
+      "name": "Jonas",
+      "surname": "Basanavičius",
+      "password": "Adminas1",
       "role": "USER"
     }
   ]

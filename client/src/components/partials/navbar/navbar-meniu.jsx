@@ -16,7 +16,7 @@ import { Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { logout, selectAuth } from '../../../store/auth';
 import routes from '../../../Routes/routes';
-import ProfilePage from '../../../pages/profile-page';
+import ProfilePage from '../../../pages/profile-page/profile-page';
 
 const NavbarMeniu = () => {
   const navigate = useNavigate();

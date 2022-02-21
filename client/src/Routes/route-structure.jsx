@@ -29,10 +29,11 @@ export default [
         path: '*',
         pageName: 'ErrorPage',
       },
-      // {
-      //   path: 'dash',
-      //   pageName: 'Dashboard',
-      // },
+      {
+        path: 'profile',
+        pageName: 'ProfilePage',
+        auth: LOGGED_IN,
+      },
     ],
   },
   {
@@ -42,11 +43,6 @@ export default [
       {
         path: null,
         pageName: 'BoardPage',
-        auth: LOGGED_IN,
-      },
-      {
-        path: 'profile',
-        pageName: 'ProfilePage',
         auth: LOGGED_IN,
       },
     ],

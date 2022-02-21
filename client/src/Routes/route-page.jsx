@@ -5,7 +5,7 @@ import RegisterPage from '../pages/register-page';
 import ErrorPage from '../pages/error-page';
 import BoardPage from '../pages/board-page';
 import Dashboard from '../components/Layouts/dashboard-layout/dashboard';
-import ProfilePage from '../pages/profile-page';
+import ProfilePage from '../pages/profile-page/profile-page';
 
 export default {
   PageLayout,

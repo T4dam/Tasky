@@ -1,15 +1,11 @@
 import * as React from 'react';
-import { styled, useTheme } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
-// import MuiAppBar from '@mui/material/AppBar';
-// import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
-// import { Fab } from '@mui/material';
-// import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ListItem from '@mui/material/ListItem';
@@ -18,8 +14,6 @@ import ListItemText from '@mui/material/ListItemText';
 import { Outlet } from 'react-router-dom';
 import WallpaperIcon from '@mui/icons-material/Wallpaper';
 import EditIcon from '@mui/icons-material/Edit';
-// import CloseIcon from '@mui/icons-material/Close';
-// import MenuIcon from '@mui/icons-material/Menu';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import NavbarContainer from '../../partials/navbar/navbar-container';
 import Navbar from '../../partials/navbar';
@@ -41,7 +35,12 @@ const closedMixin = (theme) => ({
     duration: theme.transitions.duration.leavingScreen,
   }),
   overflowX: 'hidden',
-  width: `calc(${theme.spacing(7)} + 1px)`,
+  marginLeft: '-1px',
+  width: 0,
+  [theme.breakpoints.up('md')]: {
+    marginLeft: 0,
+    width: `calc(${theme.spacing(7)} + 1px)`,
+  },
 });
 
 const DrawerHeader = styled('div')(({ theme }) => ({
@@ -53,27 +52,23 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   ...theme.mixins.toolbar,
 }));
 
-const notForwardableProps = ['drawerWidth'];
-
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
     '& .MuiDrawer-paper': {
       width: drawerWidth,
     },
-    [theme.breakpoints.up('md')]: {
-      width: drawerWidth,
-      whiteSpace: 'nowrap',
-      flexShrink: 0,
-      boxSizing: 'border-box',
-      ...(open && {
-        ...openedMixin(theme),
-        '& .MuiDrawer-paper': openedMixin(theme),
-      }),
-      ...(!open && {
-        ...closedMixin(theme),
-        '& .MuiDrawer-paper': closedMixin(theme),
-      }),
-    },
+    width: drawerWidth,
+    whiteSpace: 'nowrap',
+    flexShrink: 0,
+    boxSizing: 'border-box',
+    ...(open && {
+      ...openedMixin(theme),
+      '& .MuiDrawer-paper': openedMixin(theme),
+    }),
+    ...(!open && {
+      ...closedMixin(theme),
+      '& .MuiDrawer-paper': closedMixin(theme),
+    }),
   }),
 );
 

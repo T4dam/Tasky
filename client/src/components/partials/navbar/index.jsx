@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <Box sx={{
-        display: 'flex', alignItems: 'center', width: 1 / 2, gap: { xs: 2, sm: 4 },
+        display: 'flex', alignItems: 'center', width: 1 / 2, gap: { xs: 2, sm: 4, md: 6 },
       }}
       >
         <Link to={routes.HomePage} style={{ display: 'flex', textDecoration: 'none' }}>
@@ -35,7 +35,14 @@ const Navbar = () => {
         </Link>
         {
                state.loggedIn
-                 ? <NavLink to={routes.BoardPage}>Tvarkyklė</NavLink>
+
+                 ? (
+                   <>
+                     <NavLink to={routes.HomePage}>Pagrindinis</NavLink>
+                     <NavLink to={routes.BoardPage}>Planuoklė</NavLink>
+                     <NavLink to={routes.AboutPage}><Typography sx={{ whiteSpace: 'nowrap' }}>Apie Projektą</Typography></NavLink>
+                   </>
+                 )
                  : null
             }
 

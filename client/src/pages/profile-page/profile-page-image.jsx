@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import {
   Box,
   styled,
@@ -7,6 +7,7 @@ import {
 import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
 import UserService from '../../services/user-service';
 
+// eslint-disable-next-line no-unused-vars
 const Pic = styled('img')(({ theme }) => ({
   height: '200px',
   width: '200px',

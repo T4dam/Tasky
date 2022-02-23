@@ -12,6 +12,7 @@ import {
 import ErrorIcon from '@mui/icons-material/Error';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import AuthService from '../../services/auth-service';
+import ConfirmationModal from './profile-page-confirmation-modal';
 
 const validationSchema = yup.object({
   name: yup
@@ -85,63 +86,66 @@ const ProfilePageForm = ({ name, surname, email }) => {
   }
 
   return (
-    <Box component="form" onSubmit={handleSubmit}>
-      <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-        <Grid container rowSpacing={2} columnSpacing={{ xs: 0 }}>
-          <Grid item xs={12}>
-            <TextField
-              label="Vardas"
-              size="small"
-              name="name"
-              value={values.name}
-              onChange={handleChange}
-              error={Boolean(errors.name)}
-              helperText={errors.name}
-              disabled={isSubmitting}
-            />
-          </Grid>
-          <Grid item xs={12}>
+    <>
+      <ConfirmationModal handleClose={() => setOpen(false)} open={open} formData={values} />
+      <Box component="form" onSubmit={handleSubmit}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+          <Grid container rowSpacing={2} columnSpacing={{ xs: 0 }}>
+            <Grid item xs={12}>
+              <TextField
+                label="Vardas"
+                size="small"
+                name="name"
+                value={values.name}
+                onChange={handleChange}
+                error={Boolean(errors.name)}
+                helperText={errors.name}
+                disabled={isSubmitting}
+              />
+            </Grid>
+            <Grid item xs={12}>
 
-            <TextField
-              label="Pavardė"
-              size="small"
-              name="surname"
-              value={values.surname}
-              onChange={handleChange}
-              error={Boolean(errors.surname)}
-              helperText={errors.surname}
-              disabled={isSubmitting}
-            />
-          </Grid>
-          <Grid item xs={12}>
+              <TextField
+                label="Pavardė"
+                size="small"
+                name="surname"
+                value={values.surname}
+                onChange={handleChange}
+                error={Boolean(errors.surname)}
+                helperText={errors.surname}
+                disabled={isSubmitting}
+              />
+            </Grid>
+            <Grid item xs={12}>
 
-            <TextField
-              label="Paštas"
-              size="small"
-              name="email"
-              value={values.email}
-              onChange={handleEmailChange}
-              error={Boolean(errors.email) || !emailAvailable}
-              helperText={errors.email ?? (emailAvailable ? undefined : 'paštas jau užimtas')}
-              InputProps={{ endAdornment: emailAdornment }}
-              disabled={isSubmitting}
-            />
+              <TextField
+                label="Paštas"
+                size="small"
+                name="email"
+                value={values.email}
+                onChange={handleEmailChange}
+                error={Boolean(errors.email) || !emailAvailable}
+                helperText={errors.email ?? (emailAvailable ? undefined : 'paštas jau užimtas')}
+                InputProps={{ endAdornment: emailAdornment }}
+                disabled={isSubmitting}
+              />
+            </Grid>
           </Grid>
-        </Grid>
+        </Box>
+
+        <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2 }}>
+          <Button
+            variant="contained"
+            color="primary"
+            type="submit"
+            disabled={!dirty || !isValid}
+            sx={{ width: 120 }}
+          >
+            {isSubmitting ? <CircularProgress color="inherit" size={24} /> : 'Redaguoti'}
+          </Button>
+        </Box>
       </Box>
-
-      <Box sx={{ display: 'flex', justifyContent: 'center', pt: 2 }}>
-        <Button
-          variant="contained"
-          color="primary"
-          type="submit"
-          disabled={!dirty || !isValid}
-          sx={{ width: 120 }}
-        >
-          {isSubmitting ? <CircularProgress color="inherit" size={24} /> : 'Redaguoti'}
-        </Button>
-      </Box>
-    </Box>
+    </>
   );
 };
 

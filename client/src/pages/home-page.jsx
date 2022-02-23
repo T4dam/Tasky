@@ -3,7 +3,9 @@ import {
   Box, Typography, Container,
 } from '@mui/material';
 import Banner from '../components/partials/home-page-banner/index';
-import Pic1 from '../assets/images/GuyNboard.svg';
+import Pic1 from '../assets/images/board.svg';
+import Pic2 from '../assets/images/Checklist.svg';
+import Pic3 from '../assets/images/Addnotes.svg';
 
 const HomePage = () => (
   <>
@@ -32,7 +34,7 @@ const HomePage = () => (
       </Box>
       <Box sx={{ display: 'flex', flexDirection: { xs: 'column-reverse', md: 'row' }, alignItems: 'center' }}>
         <Box sx={{ width: { xs: '100%', sm: '70%' }, paddingRight: '10px' }}>
-          <img src={Pic1} alt="guy with the task board" />
+          <img src={Pic2} alt="guy with the task board" />
         </Box>
         <Box sx={{ width: { xs: '100%', sm: '70%' }, height: 'auto', paddingLeft: '10px' }}>
           <Typography sx={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -67,7 +69,7 @@ const HomePage = () => (
           </Typography>
         </Box>
         <Box sx={{ width: { xs: '100%', sm: '70%' }, height: 'auto', paddingLeft: '10px' }}>
-          <img src={Pic1} alt="guy with the task board" />
+          <img src={Pic3} alt="guy with the task board" />
         </Box>
       </Box>
 

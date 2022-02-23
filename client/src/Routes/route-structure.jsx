@@ -34,6 +34,11 @@ export default [
         pageName: 'ProfilePage',
         auth: LOGGED_IN,
       },
+      {
+        path: 'about',
+        pageName: 'AboutPage',
+        auth: LOGGED_IN,
+      },
     ],
   },
   {

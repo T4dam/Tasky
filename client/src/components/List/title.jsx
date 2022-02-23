@@ -14,7 +14,7 @@ const InputStyle = {
 };
 
 const Title = ({ title, listId }) => {
-  const [insert, setInsert] = useState(false);
+  const [open, setOpen] = useState(false);
   const [newTitle, setNewTitle] = useState(title);
   const { updateListTitle } = useContext(storeApi);
 
@@ -23,11 +23,11 @@ const Title = ({ title, listId }) => {
   };
   const saveOnBlur = () => {
     updateListTitle(newTitle, listId);
-    setInsert(false);
+    setOpen(false);
   };
   return (
     <Box>
-      {insert ? (
+      {open ? (
         <Box>
           <InputBase
             onChange={handleOnEdit}
@@ -40,7 +40,7 @@ const Title = ({ title, listId }) => {
       ) : (
         <Box sx={{ display: 'flex' }}>
           <Typography
-            onMouseDown={() => setInsert(!insert)}
+            onMouseDown={() => setOpen(!open)}
             sx={{ flexGrow: 1 }}
           >
             {title}

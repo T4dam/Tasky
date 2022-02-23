@@ -1,6 +1,7 @@
 import database from '../database/index.js';
 import { v4 as createId } from 'uuid';
 import { createToken } from '../helpers/token-helpers.js';
+import UserViewModel from '../view-models/user-view-model.js';
 
 export const login = (req, res) => {
   const { email, password } = req.body;
@@ -17,10 +18,9 @@ export const login = (req, res) => {
   }
 
   if (foundUser.password === password) {
-    const { password, ...user } = foundUser;
     // Viskas gerai
     res.status(200).json({
-      user,
+      user: new UserViewModel(foundUser),
       token: createToken({ email, role: foundUser.role }),
     });
     return;

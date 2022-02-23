@@ -17,6 +17,15 @@
       "password": "Keturkojis1",
       "role": "USER",
       "imgSrc": "/images/img-1645600484996.jpeg"
+    },
+    {
+      "id": "700e0138-6636-4ffd-b9e4-91369709316f",
+      "email": "Markize@mai.com",
+      "name": "Makize",
+      "surname": "Markiza",
+      "password": "Markize1",
+      "role": "USER",
+      "imgSrc": "/images/img-1645607524564.jpeg"
     }
   ]
 }

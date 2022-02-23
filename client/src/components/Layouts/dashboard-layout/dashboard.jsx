@@ -84,7 +84,7 @@ const Dashboard = () => {
     setOpen(false);
   };
 
-  const handleDrawerToggle = () => setOpen(!open);
+  // const handleDrawerToggle = () => setOpen(!open);
 
   return (
     <Box sx={{ display: 'flex' }}>

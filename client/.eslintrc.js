@@ -13,7 +13,6 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'no-unused-vars': 'off',
     'react/prop-types': 0,
     'react/function-component-definition': [
       2,

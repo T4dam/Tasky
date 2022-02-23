@@ -11,6 +11,7 @@ import { selectAuth } from '../../store/auth';
 import ProfilePageForm from './profile-page-form';
 import ProfilePageImage from './profile-page-image';
 
+// eslint-disable-next-line no-unused-vars
 const PicBack = styled('img')(({ theme }) => ({
   height: '250px',
   width: '100%',

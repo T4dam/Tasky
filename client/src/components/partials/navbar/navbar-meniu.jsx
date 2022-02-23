@@ -17,6 +17,7 @@ import { useNavigate } from 'react-router-dom';
 import { logout, selectAuth } from '../../../store/auth';
 import routes from '../../../Routes/routes';
 
+
 const NavbarMeniu = () => {
   const navigate = useNavigate();
   const { user } = useSelector(selectAuth);
@@ -38,8 +39,8 @@ const NavbarMeniu = () => {
   return (
     <>
       <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-        <Typography sx={{ display: { xs: 'none', sm: 'block' } }} fontSize={14}>{`${user.name} ${user.surname}`}</Typography>
-        <Tooltip title="Nustatymai">
+  
+        <Tooltip title="Profilis">
           <IconButton
             onClick={handleClick}
             size="small"
@@ -48,7 +49,12 @@ const NavbarMeniu = () => {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <AccountCircleIcon sx={{ width: 32, height: 32 }}>M</AccountCircleIcon>
+            <img style={{
+          height: '32px',
+          width: '32px',
+          borderRadius: '50%',
+          objectFit: 'cover',
+          objectPosition: 'cover',}} src={user.imgSrc === undefined ? '/person-placeholder.jpeg' : `${user.imgSrc}`}/>
           </IconButton>
         </Tooltip>
       </Box>
@@ -88,10 +94,17 @@ const NavbarMeniu = () => {
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
       >
         <MenuItem onClick={handleTransitionToProfile}>
-          <Avatar />
-          {' '}
-          {' '}
-          Profilis
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+        
+        <img style={{
+          height: '45px',
+          width: '45px',
+          borderRadius: '50%',
+          objectFit: 'cover',
+          objectPosition: 'cover',}} src={user.imgSrc === undefined ? '/person-placeholder.jpeg' : `${user.imgSrc}`} alt="profile picture"/>
+        
+            <Typography fontSize={14}>{`${user.name} ${user.surname}`}</Typography>
+          </Box>
         </MenuItem>
         <Divider />
         <MenuItem>

@@ -6,15 +6,17 @@
       "password": "Keturkojis1",
       "name": "Jonas",
       "surname": "Basanavičius",
-      "role": "USER"
+      "role": "USER",
+      "imgSrc": "/images/img-1645559210400.jpeg"
     },
     {
-      "id": "110b3e49-e4b5-4505-a841-1531fab8f786",
-      "email": "test@test.com",
-      "name": "Jonas",
-      "surname": "Basanavičius",
-      "password": "Adminas1",
-      "role": "USER"
+      "id": "85e087fb-7a03-4824-9e6f-fcb504c5496c",
+      "email": "admsadin@gmail.com",
+      "name": "Tadas",
+      "surname": "Delininkaaaaitis",
+      "password": "Keturkojis1",
+      "role": "USER",
+      "imgSrc": "/images/img-1645600484996.jpeg"
     }
   ]
 }

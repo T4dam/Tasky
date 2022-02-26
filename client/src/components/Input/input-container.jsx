@@ -7,9 +7,9 @@ import {
   Collapse,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import InputCard from './list-input-card';
+import InputCard from './input-card';
 
-const StyledButtonBox = styled(Paper)(({ theme }) => ({
+const ButtonLong = styled(Paper)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -25,18 +25,21 @@ const StyledButtonBox = styled(Paper)(({ theme }) => ({
 
 const InputContainer = ({ listId, type }) => {
   const [open, setOpen] = useState(false);
+
+  const handleCollapsableToggle = () => setOpen(!open);
+
   return (
     <Box>
       <Collapse in={open}>
         <InputCard setOpen={setOpen} listId={listId} type={type} />
       </Collapse>
       <Collapse in={!open}>
-        <StyledButtonBox elevation={0} onClick={() => setOpen(!open)}>
+        <ButtonLong elevation={0} onClick={handleCollapsableToggle}>
           <AddIcon />
           <Typography style={{ flexShrink: 0 }}>
             {type === 'card' ? 'Pridėti užrašą' : 'Pridėti stulpelį'}
           </Typography>
-        </StyledButtonBox>
+        </ButtonLong>
       </Collapse>
     </Box>
   );

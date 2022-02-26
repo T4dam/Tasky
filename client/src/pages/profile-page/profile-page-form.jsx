@@ -89,13 +89,17 @@ const ProfilePageForm = ({ name, surname, email }) => {
     <>
       <ConfirmationModal handleClose={() => setOpen(false)} open={open} formData={values} />
       <Box component="form" onSubmit={handleSubmit}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+        <Box sx={{
+          display: 'flex', flexDirection: 'column', gap: 3, maxWidth: '500px', mr: 'auto', ml: 'auto',
+        }}
+        >
           <Grid container rowSpacing={2} columnSpacing={{ xs: 0 }}>
             <Grid item xs={12}>
               <TextField
                 label="Vardas"
                 size="small"
                 name="name"
+                fullWidth
                 value={values.name}
                 onChange={handleChange}
                 error={Boolean(errors.name)}
@@ -109,6 +113,7 @@ const ProfilePageForm = ({ name, surname, email }) => {
                 label="Pavardė"
                 size="small"
                 name="surname"
+                fullWidth
                 value={values.surname}
                 onChange={handleChange}
                 error={Boolean(errors.surname)}
@@ -122,6 +127,7 @@ const ProfilePageForm = ({ name, surname, email }) => {
                 label="Paštas"
                 size="small"
                 name="email"
+                fullWidth
                 value={values.email}
                 onChange={handleEmailChange}
                 error={Boolean(errors.email) || !emailAvailable}
@@ -139,7 +145,7 @@ const ProfilePageForm = ({ name, surname, email }) => {
             color="primary"
             type="submit"
             disabled={!dirty || !isValid}
-            sx={{ width: 120 }}
+            sx={{ width: 120, mb: '100px' }}
           >
             {isSubmitting ? <CircularProgress color="inherit" size={24} /> : 'Redaguoti'}
           </Button>

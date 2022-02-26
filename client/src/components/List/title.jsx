@@ -11,6 +11,7 @@ const InputStyle = {
   background: '#F9FAFB',
   borderRadius: '4px',
   paddingLeft: '6px',
+  fontSize: '30px',
 };
 
 const Title = ({ title, listId }) => {
@@ -35,13 +36,18 @@ const Title = ({ title, listId }) => {
             value={newTitle}
             fullWidth
             onBlur={saveOnBlur}
+            placeholder="Rašykite pavadinimą"
+            size="medium"
+            required
           />
         </Box>
       ) : (
         <Box sx={{ display: 'flex' }}>
           <Typography
             onMouseDown={() => setOpen(!open)}
-            sx={{ flexGrow: 1 }}
+            sx={{
+              flexGrow: 1, fontWeight: '500', fontSize: '1.1rem', textTransform: 'uppercase',
+            }}
           >
             {title}
           </Typography>

@@ -4,7 +4,7 @@ import { Paper, styled, CssBaseline, Box } from '@mui/material';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import Title from './title';
 import Card from './card';
-import InputContainer from '../Input/list-input-container';
+import InputContainer from '../Input/input-container';
 
 const ListContainer = styled(Paper)(({ theme }) => ({
   backgroundColor: '#dfe3e6',

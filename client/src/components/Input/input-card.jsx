@@ -10,14 +10,11 @@ import React, { useState, useContext } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import storeApi from '../../utilities/storeApi';
 
-const StyledCardContainer = styled(Paper)(({ theme }) => ({
+const InputCardContainer = styled(Paper)(({ theme }) => ({
   marginBottom: theme.spacing(1),
   marginTop: theme.spacing(1),
   padding: theme.spacing(1),
   minHeight: '85px',
-}));
-const ActionButton = styled(Button)(({ theme }) => ({
-  marginBottom: theme.spacing(1),
 }));
 
 const InputCard = ({ setOpen, listId, type }) => {
@@ -42,7 +39,7 @@ const InputCard = ({ setOpen, listId, type }) => {
   return (
     <Box>
       <Box>
-        <StyledCardContainer>
+        <InputCardContainer>
           <InputBase
             style={{ overflow: 'hidden' }}
             onChange={handleOnChange}
@@ -54,16 +51,20 @@ const InputCard = ({ setOpen, listId, type }) => {
               type === 'card' ? 'Pridėti užrašą' : 'Pridėti pavadinimą'
             }
           />
-        </StyledCardContainer>
+        </InputCardContainer>
       </Box>
+
       <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-        <ActionButton
+        <Button
           variant="contained"
-          style={{ color: 'white', backgroundColor: '#5aac44' }}
+          color="primary"
+          type="submit"
+          disabled={cardContent === ''}
           onMouseDown={handleSubmit}
+          sx={{ width: 100, mb: '8px' }}
         >
           Pridėti
-        </ActionButton>
+        </Button>
         <IconButton sx={{ cursor: 'pointer' }} onClick={() => setOpen(false)}>
           <CloseIcon />
         </IconButton>

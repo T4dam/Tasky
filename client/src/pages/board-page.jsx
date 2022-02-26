@@ -5,7 +5,7 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import List from '../components/List/list';
 import store from '../utilities/store';
 import StoreApi from '../utilities/storeApi';
-import InputContainer from '../components/Input/list-input-container';
+import InputContainer from '../components/Input/input-container';
 
 const BoardPage = () => {
   const [data, setData] = useState(store);

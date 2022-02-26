@@ -95,7 +95,7 @@ const Dashboard = () => {
       <Drawer
         variant="permanent"
         open={open}
-        drawerWidth={drawerWidth}
+        drawerwidth={drawerWidth}
         onClose={handleDrawerClose}
       >
         <DrawerHeader>

@@ -1,6 +1,6 @@
+/*eslint-disable*/
 import * as React from 'react';
-import { styled, useTheme } from '@mui/material';
-import Box from '@mui/material/Box';
+import { styled, useTheme, Box } from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -17,6 +17,8 @@ import EditIcon from '@mui/icons-material/Edit';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import NavbarContainer from '../../partials/navbar/navbar-container';
 import Navbar from '../../partials/navbar';
+import ColorPickerModal from '../../color-picker/color-picker-modal';
+import DrawerHeader from './dashboard-drawer-header';
 
 const drawerWidth = 240;
 
@@ -43,15 +45,6 @@ const closedMixin = (theme) => ({
   },
 });
 
-const DrawerHeader = styled('div')(({ theme }) => ({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'flex-end',
-  padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-}));
-
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
     '& .MuiDrawer-paper': {
@@ -75,6 +68,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const Dashboard = () => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -84,6 +78,8 @@ const Dashboard = () => {
     setOpen(false);
   };
 
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
   // const handleDrawerToggle = () => setOpen(!open);
 
   return (
@@ -104,7 +100,8 @@ const Dashboard = () => {
           </IconButton>
         </DrawerHeader>
         <List>
-          <ListItem button>
+          <ListItem button onClick={handleOpen}>
+            <ColorPickerModal isOpen={isOpen} onClose={handleClose}/>
             <ListItemIcon>
               <Tooltip title="Fonas" placement="right">
                 <WallpaperIcon />
@@ -131,7 +128,7 @@ const Dashboard = () => {
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader />
+        <DrawerHeader/>
         <Outlet />
       </Box>
     </Box>

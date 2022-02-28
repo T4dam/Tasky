@@ -18,7 +18,7 @@ const OtherBoards = ({ handleCloseOB }) => (
         </Typography>
       </Box>
     </Button>
-    <Button>
+    <Button onClick={handleCloseOB}>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Box sx={{
           height: '100px', width: '100px', background: 'red', borderRadius: '5px',
@@ -32,7 +32,7 @@ const OtherBoards = ({ handleCloseOB }) => (
         </Typography>
       </Box>
     </Button>
-    <Button>
+    <Button onClick={handleCloseOB}>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Box sx={{
           height: '100px', width: '100px', background: 'red', borderRadius: '5px',
@@ -46,7 +46,7 @@ const OtherBoards = ({ handleCloseOB }) => (
         </Typography>
       </Box>
     </Button>
-    <Button>
+    <Button onClick={handleCloseOB}>
       <Box sx={{ display: 'flex', flexDirection: 'column' }}>
         <Box sx={{
           height: '100px', width: '100px', background: 'red', borderRadius: '5px',

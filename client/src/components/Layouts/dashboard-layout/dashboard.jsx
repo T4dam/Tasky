@@ -1,16 +1,20 @@
 /*eslint-disable*/
 import * as React from 'react';
-import { styled, useTheme, Box } from '@mui/material';
+import {
+  styled,
+  useTheme,
+  Box,
+  List,
+  CssBaseline,
+  IconButton,
+  Tooltip,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+} from '@mui/material';
 import MuiDrawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import CssBaseline from '@mui/material/CssBaseline';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { Outlet } from 'react-router-dom';
 import WallpaperIcon from '@mui/icons-material/Wallpaper';
 import EditIcon from '@mui/icons-material/Edit';
@@ -20,6 +24,11 @@ import Navbar from '../../partials/navbar';
 import ColorPickerModal from '../../color-picker/color-picker-modal';
 import DrawerHeader from './dashboard-drawer-header';
 import OtherBoardsModal from '../../OtherBoards/other-boards-modal';
+import Divider from '@mui/material/Divider';
+import HomeIcon from '@mui/icons-material/Home';
+import InfoIcon from '@mui/icons-material/Info';
+import { useNavigate } from 'react-router-dom';
+import routes from '../../../Routes/routes';
 
 const drawerWidth = 240;
 
@@ -67,6 +76,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 const Dashboard = () => {
+   const navigate = useNavigate();
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -130,6 +140,27 @@ const Dashboard = () => {
             </ListItemIcon>
             <ListItemText primary="Redaguoti" />
           </ListItem>
+
+        </List>
+            <Divider />
+        <List>
+          <ListItem button onClick={() => navigate(routes.HomePage)}>
+            <ListItemIcon>
+              <Tooltip title="Pagrindinis puslapis" placement="right">
+                <HomeIcon />
+              </Tooltip>
+            </ListItemIcon>
+            <ListItemText primary="Pagrindinis puslapis" />
+          </ListItem>
+          <ListItem button onClick={() => navigate(routes.AboutPage)}>
+            <ListItemIcon>
+              <Tooltip title="Apie projektą" placement="right">
+                <InfoIcon />
+              </Tooltip>
+            </ListItemIcon>
+            <ListItemText primary="Apie projektą" />
+          </ListItem>
+
         </List>
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>

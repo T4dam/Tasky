@@ -12,17 +12,23 @@ const style = {
   display: 'flex'
 };
 
-const ColorPickerModal = ({ isOpen, handleClose }) => (
-      <Modal open={isOpen} onClose={()=> handleClose()} >
-        <Box sx={style}>
-          <ColorPicker />
-          <Box>
-              <IconButton onClose={handleClose}>
-                  <CancelIcon />
-              </IconButton>
-          </Box>
-        </Box>
-      </Modal>
-);
+const ColorPickerModal = ({ isOpen, handleClose }) => {
+    const handleActiveColor = (color) => {
+        console.log(color);
+    }
+    return (
+    <Modal
+    open={isOpen}
+    onClose={handleClose}
+    aria-labelledby="modal-modal-title"
+    aria-describedby="modal-modal-description"
+    >
+    <Box sx={style}>
+
+<ColorPicker onActiveColor={handleActiveColor} />
+
+    </Box>
+    </Modal>
+)};
 
 export default ColorPickerModal;

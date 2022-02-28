@@ -6,12 +6,15 @@ import Navbar from '../partials/navbar/index';
 import NavbarContainer from '../partials/navbar/navbar-container';
 
 const PageLayout = () => (
-  <>
+  <Box sx={{
+    display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '100vh', width: '100%',
+  }}
+  >
     <NavbarContainer>
       <Navbar />
     </NavbarContainer>
     {/* <Container sx={{ py: '10px' }}> */}
-    <Box>
+    <Box sx={{ flexGrow: 1 }}>
       <Outlet />
     </Box>
     <Box sx={{
@@ -30,6 +33,6 @@ const PageLayout = () => (
       <Typography>Ⓒ Tasky 2022</Typography>
     </Box>
     {/* </Container> */}
-  </>
+  </Box>
 );
 export default PageLayout;

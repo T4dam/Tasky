@@ -19,6 +19,7 @@ import NavbarContainer from '../../partials/navbar/navbar-container';
 import Navbar from '../../partials/navbar';
 import ColorPickerModal from '../../color-picker/color-picker-modal';
 import DrawerHeader from './dashboard-drawer-header';
+import OtherBoardsModal from '../../OtherBoards/other-boards-modal';
 
 const drawerWidth = 240;
 
@@ -69,6 +70,7 @@ const Dashboard = () => {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
+  const [openOB, setOpenOB] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -80,7 +82,9 @@ const Dashboard = () => {
 
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => setIsOpen(false);
-  // const handleDrawerToggle = () => setOpen(!open);
+
+  const handleOpenOB = () => setOpenOB(true);
+  const handleCloseOB = () => setOpenOB(false);
 
   return (
     <Box sx={{ display: 'flex' }}>
@@ -99,9 +103,10 @@ const Dashboard = () => {
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
+        
+
         <List>
           <ListItem button onClick={handleOpen}>
-            <ColorPickerModal isOpen={isOpen} onClose={handleClose}/>
             <ListItemIcon>
               <Tooltip title="Fonas" placement="right">
                 <WallpaperIcon />
@@ -109,7 +114,7 @@ const Dashboard = () => {
             </ListItemIcon>
             <ListItemText primary="Fonas" />
           </ListItem>
-          <ListItem button>
+          <ListItem button onClick={handleOpenOB}>
             <ListItemIcon>
               <Tooltip title="Šablonai" placement="right">
                 <LibraryBooksIcon />
@@ -129,7 +134,13 @@ const Dashboard = () => {
       </Drawer>
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader/>
-        <Outlet />
+        <Box>
+        
+    </Box>
+        <Outlet />        
+                    <ColorPickerModal isOpen={isOpen} handleClose={handleClose} />
+                    <OtherBoardsModal openOB={openOB} handleCloseOB={handleCloseOB} />
+
       </Box>
     </Box>
   );

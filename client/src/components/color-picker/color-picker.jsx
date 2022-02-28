@@ -2,10 +2,14 @@
 import React, { useState } from 'react';
 import { SketchPicker } from 'react-color';
 
-const ColorPicker = () => {
+const ColorPicker = ({ onActiveColor }) => {
   const [color, setColor] = useState('#ff0000');
+  const handleColor = (color) => {
+    setColor(color.hex);
+    onActiveColor(color);
+  };
   return (
-    <SketchPicker color={color} onChangeComplete={(color) => { setColor(color.hex); }} />
+    <SketchPicker color={color} onChangeComplete={(color) => { handleColor(color) }} />
   );
 };
 

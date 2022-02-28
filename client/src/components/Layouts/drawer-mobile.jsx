@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+
 import {
   Drawer as MUIDrawer,
   ListItem,
@@ -7,20 +9,29 @@ import {
   ListItemText,
 } from '@mui/material';
 import AcUnitIcon from '@mui/icons-material/AcUnit';
+import routes from '../../Routes/routes';
 
 const DrawerMobile = ({ open, handleDrawerClose }) => {
+  const navigate = useNavigate();
+
+  const handleRouteRegister = () => {
+    navigate(routes.LoginPage);
+  };
   const itemsList = [
     {
       text: 'Pagrindinis',
       icon: <AcUnitIcon />,
+      onClick: () => handleRouteRegister(),
     },
     {
-      text: 'Registracija',
+      text: <Link to={routes.RegisterPage}>Registruotis</Link>,
       icon: <AcUnitIcon />,
+      onClick: () => handleRouteRegister(),
     },
     {
-      text: 'Prisijungti',
+      text: <Link to={routes.LoginPage}>Prisijungt</Link>,
       icon: <AcUnitIcon />,
+      onClick: () => handleRouteRegister(),
     },
   ];
   return (

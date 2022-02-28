@@ -34,7 +34,7 @@ const Banner = () => (
     }}
     >
       <Box>
-        <Container sx={{ paddingLeft: { lg: '20%' } }}>
+        <Container sx={{ paddingLeft: { xs: 0, lg: '20%' }, pr: 0 }}>
           <Typography
             variant="h1"
             color="white"

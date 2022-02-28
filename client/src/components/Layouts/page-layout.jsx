@@ -27,14 +27,16 @@ const PageLayout = () => {
       </NavbarContainer>
       {/* <Container sx={{ py: '10px' }}> */}
       <Box sx={{ flexGrow: 1 }}>
+        <Outlet />
+      </Box>
+      <Box>
         <DrawerMobile open={open} handleDrawerClose={handleDrawerClose} />
         <IconButton>
-
           <Fab
             color="primary"
             sx={{
               position: 'fixed',
-              bottom: 70,
+              bottom: 55,
               right: 20,
               display: { xs: 'inline-flex', sm: 'none' },
             }}
@@ -43,7 +45,6 @@ const PageLayout = () => {
             { open ? <CloseIcon /> : <MenuIcon />}
           </Fab>
         </IconButton>
-        <Outlet />
       </Box>
       <Box sx={{
         mt: '40px',
@@ -52,7 +53,7 @@ const PageLayout = () => {
         justifyContent: 'center',
         background: 'black',
         width: '100%',
-        height: '58px',
+        height: '48px',
         color: 'white',
         position: '',
         bottom: 0,

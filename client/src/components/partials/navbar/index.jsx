@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <Box sx={{
-        display: 'flex', alignItems: 'center', width: 1 / 2, gap: { xs: 2, sm: 4, md: 6 },
+        display: 'flex', alignItems: 'center', width: 3 / 4, gap: { xs: 2, sm: 4, md: 6 },
       }}
       >
         <Link to={routes.HomePage} style={{ display: 'flex', textDecoration: 'none' }}>
@@ -37,18 +37,18 @@ const Navbar = () => {
                state.loggedIn
 
                  ? (
-                   <>
+                   <Box sx={{ display: { xs: 'none', sm: 'flex' }, gap: { xs: 2, sm: 4, md: 6 } }}>
                      <NavLink to={routes.HomePage}>Pagrindinis</NavLink>
                      <NavLink to={routes.BoardPage}>Planuoklė</NavLink>
                      <NavLink to={routes.AboutPage}><Typography sx={{ whiteSpace: 'nowrap' }}>Apie Projektą</Typography></NavLink>
-                   </>
+                   </Box>
                  )
                  : null
             }
 
       </Box>
       <Box sx={{
-        display: 'flex', alignItems: 'center', width: 1 / 2, justifyContent: 'flex-end',
+        display: 'flex', alignItems: 'center', width: 1 / 4, justifyContent: 'flex-end',
       }}
       >
 

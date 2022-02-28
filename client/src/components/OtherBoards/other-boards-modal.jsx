@@ -9,10 +9,10 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  maxwidth: 400,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
+  border: '1px solid #000',
+  borderRadius: '10px',
   p: 4,
 };
 
@@ -24,9 +24,9 @@ const OtherBoardsModal = ({ openOB, handleCloseOB }) => (
     >
       <Box sx={style}>
         <Typography id="modal-modal-title" variant="h6" component="h2">
-          Text in a modal
+          Pasirinkite naują šabloną
         </Typography>
-        <OtherBoards />
+        <OtherBoards handleCloseOB={handleCloseOB} />
       </Box>
     </Modal>
   </div>

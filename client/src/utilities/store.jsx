@@ -23,6 +23,7 @@ const data = {
       id: 'list-1',
       title: 'Darbeliai',
       cards,
+      board: 'board-0',
     },
   },
   listIds: ['list-1'],

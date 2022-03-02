@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 import { v4 as createId } from 'uuid';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
@@ -6,6 +6,7 @@ import List from '../components/List/list';
 import store from '../utilities/store';
 import StoreApi from '../utilities/storeApi';
 import InputContainer from '../components/Input/input-container';
+import tasksService from '../services/tasks-service';
 
 const BoardPage = () => {
   const [data, setData] = useState(store);
@@ -108,6 +109,12 @@ const BoardPage = () => {
       setData(newState);
     }
   };
+
+  useEffect(() => {
+    tasksService.getTasks();
+    console.log(tasksService.getTasks());
+  }, []);
+
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
     <StoreApi.Provider value={{ addNewCard, addNewList, updateListTitle }}>

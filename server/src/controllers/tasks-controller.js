@@ -5,7 +5,7 @@ import database from '../database/index.js';
     const DB = JSON.parse(JSON.stringify(database.data));
   
     const tasks = DB.lists[0].tasks;
-    res.status(200).json(tasks);
+    res.status(200).json(DB.lists);
 
  
   }

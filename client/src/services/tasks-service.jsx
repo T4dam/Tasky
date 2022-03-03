@@ -9,19 +9,19 @@ const requester = axios.create({
   },
 });
 
-const getTasks = async () => {
+const getLists = async () => {
 //   const { token } = store.getState().auth;
-  const { data: tasks } = await requester.get('/', {
+  const { data } = await requester.get('/', {
     // headers: {
     //   Authorization: `Bearer ${token}`,
     // },
   });
 
-  return { tasks };
+  return data;
 //   const action = usersSlice.loadUsers({ users });
 //   store.dispatch(action);
 };
 
 export default {
-  getTasks,
+  getLists,
 };

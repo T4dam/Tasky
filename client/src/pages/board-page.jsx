@@ -10,6 +10,9 @@ import tasksService from '../services/tasks-service';
 
 const BoardPage = () => {
   const [data, setData] = useState(store);
+  const [lists, setLists] = useState([]);
+
+  console.log(lists);
 
   const addNewCard = (content, listId) => {
     const newCardId = createId();
@@ -111,8 +114,10 @@ const BoardPage = () => {
   };
 
   useEffect(() => {
-    tasksService.getTasks();
-    console.log(tasksService.getTasks());
+    (async () => {
+      const fetchedLists = await tasksService.getLists();
+      setLists(fetchedLists);
+    })();
   }, []);
 
   return (

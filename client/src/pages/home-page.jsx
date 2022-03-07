@@ -12,9 +12,16 @@ const HomePage = () => (
     <Banner />
     <Container>
 
-      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center' }}>
+      <Box sx={{
+        display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', mt: { xs: '20px', lg: '0' },
+      }}
+      >
         <Box sx={{ width: { xs: '100%', sm: '70%' }, paddingRight: '10px' }}>
-          <Typography sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Typography element="h4" variant="h6" sx={{ textAlign: { xs: 'center', sm: 'left' } }}>Padidink savo produktyvumą</Typography>
+          <Typography element="h3" variant="h4" sx={{ fontWeight: '700', mb: '20px', textAlign: { xs: 'center', sm: 'left' } }}>
+            Darbų sąrašas leidžia nustatyti svarbesnių užduočių prioritetus.
+          </Typography>
+          <Typography sx={{ display: 'flex', justifyContent: 'flex-end', textAlign: { xs: 'center', sm: 'left' } }}>
             Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum has been the industrys
             standard dummy text ever since the 1500s, when an
@@ -37,6 +44,11 @@ const HomePage = () => (
           <img src={Pic2} alt="guy with the task board" />
         </Box>
         <Box sx={{ width: { xs: '100%', sm: '70%' }, height: 'auto', paddingLeft: '10px' }}>
+          <Typography element="h4" variant="h6" sx={{ textAlign: { xs: 'center', sm: 'left' } }}>Pradėk save motyvuoti</Typography>
+          <Typography element="h3" variant="h4" sx={{ fontWeight: '700', mb: '20px', textAlign: { xs: 'center', sm: 'left' } }}>
+            Darbų sąrašai yra puiki motyvacinė priemonė,
+            nes jais naudodamiesi galite išsiaiškinti savo tikslus.
+          </Typography>
           <Typography sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum has been the industrys
@@ -54,6 +66,10 @@ const HomePage = () => (
       </Box>
       <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center' }}>
         <Box sx={{ width: { xs: '100%', sm: '70%' }, paddingRight: '10px' }}>
+          <Typography element="h4" variant="h6" sx={{ textAlign: { xs: 'center', sm: 'left' } }}>Nustebink visus su savo atmintimi</Typography>
+          <Typography element="h3" variant="h4" sx={{ fontWeight: '700', mb: '20px', textAlign: { xs: 'center', sm: 'left' } }}>
+            Darbų sąrašas veikia kaip išorinė atminties priemonė
+          </Typography>
           <Typography sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             Lorem Ipsum is simply dummy text of the printing and
             typesetting industry. Lorem Ipsum has been the industrys

@@ -19,20 +19,15 @@ const HomePage = () => (
         <Box sx={{ width: { xs: '100%', sm: '70%' }, paddingRight: '10px' }}>
           <Typography element="h4" variant="h6" sx={{ textAlign: { xs: 'center', sm: 'left' } }}>Padidink savo produktyvumą</Typography>
           <Typography element="h3" variant="h4" sx={{ fontWeight: '700', mb: '20px', textAlign: { xs: 'center', sm: 'left' } }}>
-            Darbų sąrašas leidžia nustatyti svarbesnių užduočių prioritetus.
+            Darbų sąrašas leidžia nustatyti svarbesnių užduočių prioritetus
           </Typography>
           <Typography sx={{ display: 'flex', justifyContent: 'flex-end', textAlign: { xs: 'center', sm: 'left' } }}>
-            Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum has been the industrys
-            standard dummy text ever since the 1500s, when an
-            unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived
-            not only five centuries, but also the leap into electronic
-            typesetting, remaining essentially unchanged. It was
-            popularised in the 1960s with the release of Letraset
-            sheets containing Lorem Ipsum passages, and more recently
-            with desktop publishing software like Aldus PageMaker
-            including versions of Lorem Ipsum.
+            Darbe ir namie sudarytas darbų sąrašas gali padėti nustatyti prioritetus darbo
+            ir asmeninėms užduotims. Taip galėsite organizuoti ir pirmiausia
+            atlikti svarbiausias užduotis. Darbų sąrašai gali būti naudojami
+            laiko valdymui pagerinti, nes visos jūsų užduotys yra aiškiai išdėstytos
+            iš anksto. Galite lengviau nuspręsti,
+            ką daryti atlikus užduotį, ir pereiti prie kito sąrašo punkto.
           </Typography>
         </Box>
         <Box sx={{ width: { xs: '100%', sm: '70%' }, height: 'auto', paddingLeft: '10px' }}>
@@ -47,20 +42,17 @@ const HomePage = () => (
           <Typography element="h4" variant="h6" sx={{ textAlign: { xs: 'center', sm: 'left' } }}>Pradėk save motyvuoti</Typography>
           <Typography element="h3" variant="h4" sx={{ fontWeight: '700', mb: '20px', textAlign: { xs: 'center', sm: 'left' } }}>
             Darbų sąrašai yra puiki motyvacinė priemonė,
-            nes jais naudodamiesi galite išsiaiškinti savo tikslus.
+            nes jais naudodamiesi galite išsiaiškinti savo tikslus
           </Typography>
           <Typography sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum has been the industrys
-            standard dummy text ever since the 1500s, when an
-            unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived
-            not only five centuries, but also the leap into electronic
-            typesetting, remaining essentially unchanged. It was
-            popularised in the 1960s with the release of Letraset
-            sheets containing Lorem Ipsum passages, and more recently
-            with desktop publishing software like Aldus PageMaker
-            including versions of Lorem Ipsum.
+            Nešvaistysite laiko užduotims, kurioms nereikia
+            tiesioginio dėmesio. Sąrašas padės jums susitelkti ties
+            svarbiausiomis užduotimis. Turint darbų sąrašą lengviau susisteminti
+            viską, ką norite padaryti per dieną, kad kitą dieną
+            galėtumėte pradėti iš naujo. Įvykdžius užduotį gali padidėti
+            moralė ir produktyvumas. Net jei tai tokia paprasta užduotis kaip
+            lovos paklojimas, užduoties atlikimas daugeliui žmonių yra galingas
+            motyvuojantis veiksnys.
           </Typography>
         </Box>
       </Box>
@@ -71,17 +63,13 @@ const HomePage = () => (
             Darbų sąrašas veikia kaip išorinė atminties priemonė
           </Typography>
           <Typography sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            Lorem Ipsum is simply dummy text of the printing and
-            typesetting industry. Lorem Ipsum has been the industrys
-            standard dummy text ever since the 1500s, when an
-            unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived
-            not only five centuries, but also the leap into electronic
-            typesetting, remaining essentially unchanged. It was
-            popularised in the 1960s with the release of Letraset
-            sheets containing Lorem Ipsum passages, and more recently
-            with desktop publishing software like Aldus PageMaker
-            including versions of Lorem Ipsum.
+            Vienu metu galima laikyti tik keletą informacijos vienetų.
+            Turėkite darbų sąrašą ir galėsite sekti viską, o ne tik kelias
+            užduotis, kurias turite atlikti. Jūsų darbų sąrašas taip pat
+            sustiprins informaciją, todėl mažiau tikėtina, kad ką nors pamiršite.
+            Kasdienių darbų sąrašo sudarymas ir tvarkymas gali padėti pagerinti bendrą atmintį, nes
+            sustiprina trumpalaikę atmintį. Rašydami užduotis ir trumpalaikius tikslus bei
+            nuolat tikrindami sąrašą, galite išsaugoti daugiau informacijos.
           </Typography>
         </Box>
         <Box sx={{ width: { xs: '100%', sm: '70%' }, height: 'auto', paddingLeft: '10px' }}>

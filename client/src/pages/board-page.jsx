@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
 import { v4 as createId } from 'uuid';
@@ -7,12 +8,12 @@ import store from '../utilities/store';
 import StoreApi from '../utilities/storeApi';
 import InputContainer from '../components/Input/input-container';
 import tasksService from '../services/tasks-service';
+// import { useSelector } from 'react-redux';
+// import { selectAuth } from '../store/auth';
 
 const BoardPage = () => {
   const [data, setData] = useState(store);
-  const [lists, setLists] = useState([]);
-
-  console.log(lists);
+  // const { user } = useSelector(selectAuth);
 
   const addNewCard = (content, listId) => {
     const newCardId = createId();
@@ -116,7 +117,37 @@ const BoardPage = () => {
   useEffect(() => {
     (async () => {
       const fetchedLists = await tasksService.getLists();
-      setLists(fetchedLists);
+
+      const listIds = [];
+      let transformedLists = {};
+
+      for (let i = 0; i < fetchedLists.length; i++) {
+        const list = fetchedLists[i];
+        const listId = createId();
+        listIds.push(listId);
+        transformedLists = {
+          ...transformedLists,
+          [listId]: {
+            id: listId,
+            title: list.title,
+            cards: list.tasks,
+          },
+        };
+      }
+
+      const transformedData = { lists: transformedLists, listIds };
+      setData(transformedData);
+
+      // atgal i  db struktura:
+      const dataForDB = [];
+      for (let i = 0; i < transformedData.listIds.length; i++) {
+        const id = transformedData.listIds[i];
+        dataForDB.push({
+          title: transformedData.lists[id].title,
+          tasks: transformedData.lists[id].cards,
+        });
+      }
+
     })();
   }, []);
 

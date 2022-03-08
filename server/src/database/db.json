@@ -30,7 +30,7 @@
   ],
   "lists": [
     {
-      "title": "",
+      "title": "Test",
       "userId": "1",
       "tasks": [
         {
@@ -47,6 +47,14 @@
         },
         {
           "id": "card-4",
+          "content": "Išgerti vitaminus"
+        },
+        {
+          "id": "card-5",
+          "content": "Penktadienio surprize vakarėlis"
+        },
+        {
+          "id": "card-6",
           "content": "Išgerti vitaminus"
         }
       ]

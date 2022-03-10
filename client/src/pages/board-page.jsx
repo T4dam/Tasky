@@ -119,11 +119,25 @@ const BoardPage = () => {
     (async () => {
       const fetchedLists = await tasksService.getLists();
 
-      const nesData = {
+      const newData = {
         lists: {},
         listIds: []
       };
-  
+
+      for (let i = 0; i < fetchedLists.length; i++) {
+        const element = fetchedLists[i];
+        const newId = createId();
+
+        newData.listIds.push(newId);
+        newData.lists[newId] = {
+          id: newId,
+          title: element.title,
+          cards: element.tasks,
+        }
+        
+      }
+
+      setData(newData);
 
       // for (let i = 0; i < fetchedLists.length; i++) {
       //   const list = fetchedLists[i];

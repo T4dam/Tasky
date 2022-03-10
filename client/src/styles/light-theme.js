@@ -6,6 +6,9 @@ const lightTheme = createTheme({
   },
 
   palette: {
+    background: {
+      default: '#f6f6f6',
+    },
     primary: {
       main: '#FFC100',
       dark: '#E9AB08',

@@ -1,9 +1,10 @@
 import { Router } from 'express';
-import { getTasks } from '../controllers/tasks-controller.js';
+import { getLists } from '../controllers/tasks-controller.js';
+import authMiddleware from '../middleware/auth-middleware.js';
 
 
 const router = Router();
 
-router.get('/', getTasks);
+router.get('/', authMiddleware, getLists);
 
 export default router;

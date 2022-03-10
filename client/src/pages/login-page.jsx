@@ -32,8 +32,8 @@ const validationSchema = yup.object({
       try {
         const redirectTo = searchParams.get('redirectTo');
         await AuthService.login({ email, password }, redirectTo);
-      } catch (error) {
-        setErrorMsg(error.message);
+      } catch {
+        setErrorMsg("Prisijungimas nepavyko. Patikrinkite ar teisingai suvedėte el.paštą ir slaptažodį");
       }
     };
   const {values,
@@ -115,6 +115,7 @@ const validationSchema = yup.object({
             label="Slaptažodis"
             variant="outlined"
             fullWidth
+            type="password"
             required
             autoComplete="password"
             name="password"

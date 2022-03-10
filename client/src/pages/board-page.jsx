@@ -33,7 +33,8 @@ const BoardPage = () => {
     };
     setData(newState);
   };
-  const addNewList = (title) => {
+  const addNewList = async (title) => {
+    // const newList = await ApiService.createList(title)
     const newListId = createId();
     const newList = {
       id: newListId,
@@ -118,35 +119,38 @@ const BoardPage = () => {
     (async () => {
       const fetchedLists = await tasksService.getLists();
 
-      const listIds = [];
-      let transformedLists = {};
+      const nesData = {
+        lists: {},
+        listIds: []
+      };
+  
 
-      for (let i = 0; i < fetchedLists.length; i++) {
-        const list = fetchedLists[i];
-        const listId = createId();
-        listIds.push(listId);
-        transformedLists = {
-          ...transformedLists,
-          [listId]: {
-            id: listId,
-            title: list.title,
-            cards: list.tasks,
-          },
-        };
-      }
+      // for (let i = 0; i < fetchedLists.length; i++) {
+      //   const list = fetchedLists[i];
+      //   const listId = createId();
+      //   listIds.push(listId);
+      //   transformedLists = {
+      //     ...transformedLists,
+      //     [listId]: {
+      //       id: listId,
+      //       title: list.title,
+      //       cards: list.tasks,
+      //   },
+      // };
+      // }
 
-      const transformedData = { lists: transformedLists, listIds };
-      setData(transformedData);
+      // const transformedData = { lists: transformedLists, listIds };
+      // setData(transformedData);
 
-      // atgal i  db struktura:
-      const dataForDB = [];
-      for (let i = 0; i < transformedData.listIds.length; i++) {
-        const id = transformedData.listIds[i];
-        dataForDB.push({
-          title: transformedData.lists[id].title,
-          tasks: transformedData.lists[id].cards,
-        });
-      }
+      // // atgal i  db struktura:
+      // const dataForDB = [];
+      // for (let i = 0; i < transformedData.listIds.length; i++) {
+      //   const id = transformedData.listIds[i];
+      //   dataForDB.push({
+      //     title: transformedData.lists[id].title,
+      //     tasks: transformedData.lists[id].cards,
+      //   });
+      // }
 
     })();
   }, []);
@@ -183,3 +187,21 @@ const BoardPage = () => {
 };
 
 export default BoardPage;
+
+
+
+
+
+// const listIds = [];
+// let transformedLists = {};
+// const taskBoard = res.boards.filter(taskBoard => taskBoard.userId === "1")[0].lists;
+// const data = taskBoard.map(i => {
+//   listIds.push(listId);
+//   const listId = createId()
+//   transformedLists = {
+//         ...transformedLists,
+//         [listId]: {
+//           id: listId,
+//           title: list.title,
+//           cards: list.tasks,
+// }

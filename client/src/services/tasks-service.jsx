@@ -1,5 +1,5 @@
 import axios from 'axios';
-// import store from '../store/index';
+import store from '../store/index';
 // import * as usersSlice from '../store/users';
 
 const requester = axios.create({
@@ -10,18 +10,22 @@ const requester = axios.create({
 });
 
 const getLists = async () => {
-//   const { token } = store.getState().auth;
+  const { token } = store.getState().auth;
   const { data } = await requester.get('/', {
-    // headers: {
-    //   Authorization: `Bearer ${token}`,
-    // },
-  });
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }).catch((err) => console.log(err));
 
   return data;
 //   const action = usersSlice.loadUsers({ users });
 //   store.dispatch(action);
 };
-
+const createList = async (title) => {
+  const { data } = await requester.post('/', { title });
+  return data;
+};
 export default {
   getLists,
+  createList,
 };

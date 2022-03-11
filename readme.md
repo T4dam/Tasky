@@ -4,14 +4,14 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/T4dam/Tasky.git">
+    <img src="logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Tasky</h3>
 
   <p align="center">
-    project_description
+   Virtualus įrankis planuotojams
     <br />
   </p>
 </div>
@@ -47,6 +47,7 @@ Here's a blank template to get started: To avoid retyping too much info. Do a se
 Projekto pleidimuibus reikalingos šios programos:
 - Node.js
 - Naršyklė
+- Kodo editorius
 
 ### Instaliavimas
 
@@ -95,8 +96,6 @@ Projekto pleidimuibus reikalingos šios programos:
     ```
 4. Tą patį procesą pakartokite kitam folderiui "client"
 
-
-<p align="right">(<a href="#top">Grįžti į viršų</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 ## Usage

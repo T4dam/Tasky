@@ -13,14 +13,6 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
   </p>
 </div>
 
@@ -67,7 +59,7 @@ Projekto pleidimuibus reikalingos šios programos:
    cd server
    ```
 4. šio failo direktorijoje, įvykdykite komandą:
- ```sh
+   ```sh
    npm install
    ```
 5. Tą patį procesą pakartokite kitam folderiui "client"
@@ -119,7 +111,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <!-- CONTACT -->
 ## Contact
 
-Tadas Delininkaitis- [@linkedin_handle](www.linkedin.com/in/tadasdelininkaitis)
+Tadas Delininkaitis- [@LinkedIn](https://www.linkedin.com/in/tadasdelininkaitis/)
 
 
 

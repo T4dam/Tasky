@@ -33,7 +33,7 @@ const validationSchema = yup.object({
         const redirectTo = searchParams.get('redirectTo');
         await AuthService.login({ email, password }, redirectTo);
       } catch {
-        setErrorMsg("Prisijungimas nepavyko. Patikrinkite ar teisingai suvedėte el.paštą ir slaptažodį");
+        setErrorMsg("Prisijungimas nepavyko. Patikrinkite ar teisingai įvedėte el.paštą ir slaptažodį");
       }
     };
   const {values,

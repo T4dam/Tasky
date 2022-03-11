@@ -18,6 +18,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import LoginIcon from '@mui/icons-material/Login';
 import routes from '../../Routes/routes';
 import DrawerHeader from './dashboard-layout/dashboard-drawer-header';
 import { selectAuth } from '../../store/auth';
@@ -55,7 +58,7 @@ const DrawerMobile = ({ open, handleDrawerClose }) => {
                    <ListItem button onClick={() => navigate(routes.BoardPage)}>
                      <ListItemIcon>
                        <Tooltip title="Planuoklė" placement="right">
-                         <InfoIcon />
+                         <AssignmentIcon />
                        </Tooltip>
                      </ListItemIcon>
                      <ListItemText primary="Planuoklė" />
@@ -75,7 +78,7 @@ const DrawerMobile = ({ open, handleDrawerClose }) => {
                    <ListItem button onClick={() => navigate(routes.RegisterPage)}>
                      <ListItemIcon>
                        <Tooltip title="Registracija" placement="right">
-                         <InfoIcon />
+                         <PersonAddIcon />
                        </Tooltip>
                      </ListItemIcon>
                      <ListItemText primary="Registracija" />
@@ -83,7 +86,7 @@ const DrawerMobile = ({ open, handleDrawerClose }) => {
                    <ListItem button onClick={() => navigate(routes.LoginPage)}>
                      <ListItemIcon>
                        <Tooltip title="Prisijungimas" placement="right">
-                         <InfoIcon />
+                         <LoginIcon />
                        </Tooltip>
                      </ListItemIcon>
                      <ListItemText primary="Prisijungimas" />

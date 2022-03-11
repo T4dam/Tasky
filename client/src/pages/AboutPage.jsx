@@ -17,19 +17,42 @@ const AboutPage = () => (
             fontWeight: '700', mb: '20px', textAlign: { xs: 'center', sm: 'left' },
           }}
         >
-          Darbų sąrašas leidžia nustatyti svarbesnių užduočių prioritetus.
+          Supažindinimas apie projekto įdėją
         </Typography>
+        <figure>
+          <blockquote cite="https://www.huxley.net/bnw/four.html">
+            <p>
+              Produktyvumas priklauso ne tiek nuo to, ką darote su savo laiku,
+              kiek nuo to, kaip valdote savo protą.
+
+            </p>
+          </blockquote>
+          <figcaption>
+            —Robin Sharma
+            {' '}
+            {/* <cite>Brave New World</cite> */}
+          </figcaption>
+        </figure>
         <Typography>
-          Atrodo, kad tai toks paprastas sprendimas, nes rašikliu užrašyti
-          ant popieriaus ir skirti laiko savo
-          dienos darbų sąrašui sudaryti, dienos planas padeda apibrėžti
-          jūsų iššūkius ir tikslus. Taip išvengiama laiko švaistymo bandant
-          nustatyti, kokią kitą svarbiausią
-          užduotį reikia atlikti vėliau, o dar svarbiau - įsitikinti, kad nepamiršite
-          padaryti ko nors svarbaus.
-          Darbų sąrašai - tai būdas padidinti produktyvumą, neleidžiantis nieko nepamiršti,
-          padedantis nustatyti užduočių prioritetus, efektyviai valdyti užduotis,
-          išmintingai naudoti laiką ir pagerinti laiko valdymą bei darbo eigą.
+          Vienas Harvardo verslo apžvalgos atliktas tyrimas
+          parodė, kad 90 proc. vadovų dėl prasto laiko valdymo
+          iššvaisto brangų laiką. Laiko eikvojimas ir
+          produktyvumo trūkumas yra opi problema tiek
+          verslo pasaulyje, tiek asmeniniame gyvenime.
+          Šiai problemai spręsti buvo pasitelkti programavimo
+          įgūdžiai, kurie buvo įgyti CodeAcademy  programavimo kursuose.
+          Kurso akademijos baigiamajam darbui buvo pasirinkta sukurti
+          intuityvų įrankį darbų planavimui. Ši sukurta darbų planuoklė
+          - tai būdas padidinti produktyvumą,
+          leidžiantis nieko nepamiršti,
+          padedantis nustatyti užduočių prioritetus, efektyviai
+          valdyti užduotis,
+          išmintingai naudoti laiką ir pagerinti laiko valdymą. Projekto kūrimo metu buvo panaudoti
+          šie frameworkai: Material UI, Express js, Node js, React.
+          Darbų sąrašas padeda sutelkti dėmesį į šiuo metu svarbiausią
+          užduotį, padės motyvuoti save atliekant užduotis ir pagerins
+          jūsų atmintį.
+
         </Typography>
       </Box>
     </Box>

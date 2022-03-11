@@ -4,7 +4,8 @@ import {
   styled,
   Fab,
 } from '@mui/material';
-import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+// import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import UserService from '../../services/user-service';
 
 // eslint-disable-next-line no-unused-vars
@@ -37,7 +38,7 @@ const ProfilePageImage = ({ imgSrc }) => {
         <Pic src={imgSrc ?? '/person-placeholder.jpeg'} alt="profile picture" style={{ border: '5px solid white' }} />
       </Box>
       <Fab onClick={handleUploadImgClick} sx={{ mt: '-100px', mr: '-115px' }} size="small" color="primary">
-        <AddAPhotoIcon fontSize="medium" />
+        <AddPhotoAlternateIcon fontSize="medium" />
       </Fab>
       <input type="file" accept=".png, .jpg, .jpeg" hidden ref={imgUploadRef} onChange={handleUploadImgLoaded} />
     </Box>

@@ -14,10 +14,10 @@ const AboutPage = () => (
           element="h3"
           variant="h4"
           sx={{
-            fontWeight: '700', mb: '20px', textAlign: { xs: 'center', sm: 'left' },
+            fontWeight: '700', mb: '20px', textAlign: { xs: 'center' },
           }}
         >
-          Supažindinimas apie projekto įdėją
+          Projekto sprendžiama problema
         </Typography>
         <figure>
           <blockquote cite="https://www.huxley.net/bnw/four.html">
@@ -39,6 +39,7 @@ const AboutPage = () => (
           iššvaisto brangų laiką. Laiko eikvojimas ir
           produktyvumo trūkumas yra opi problema tiek
           verslo pasaulyje, tiek asmeniniame gyvenime.
+          <br />
           Šiai problemai spręsti buvo pasitelkti programavimo
           įgūdžiai, kurie buvo įgyti CodeAcademy  programavimo kursuose.
           Kurso akademijos baigiamajam darbui buvo pasirinkta sukurti
@@ -47,11 +48,17 @@ const AboutPage = () => (
           leidžiantis nieko nepamiršti,
           padedantis nustatyti užduočių prioritetus, efektyviai
           valdyti užduotis,
-          išmintingai naudoti laiką ir pagerinti laiko valdymą. Projekto kūrimo metu buvo panaudoti
+          išmintingai naudoti laiką ir pagerinti laiko valdymą.
+          Pranašumas prieš kitas tokio tipo planuokles yra tai, jog
+          ji yra nemokama ir pritaikyta Lietuvos auditorijai, todėl
+          užduočių planuoklę gali naudotis ir vartotojai neturintys užsienio kalbos žinių.
+          {' '}
+          <br />
+          {/* Projekto kūrimo metu buvo panaudoti
           šie frameworkai: Material UI, Express js, Node js, React.
           Darbų sąrašas padeda sutelkti dėmesį į šiuo metu svarbiausią
           užduotį, padės motyvuoti save atliekant užduotis ir pagerins
-          jūsų atmintį.
+          jūsų atmintį. */}
 
         </Typography>
       </Box>

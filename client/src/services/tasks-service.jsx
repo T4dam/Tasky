@@ -22,8 +22,13 @@ const getLists = async () => {
 //   store.dispatch(action);
 };
 const createList = async (title) => {
-  const { data } = await requester.post('/', { title });
-  return data;
+  const { token } = store.getState().auth;
+  await requester.post('/', { title }, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return null;
 };
 export default {
   getLists,

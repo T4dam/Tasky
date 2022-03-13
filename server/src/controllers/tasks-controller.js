@@ -24,7 +24,7 @@ import database from '../database/index.js';
 
   export const saveTasks = (req, res) => {
     //   req.body
-    
+
     //   const user = database.data.users.find(x => x.email === req.user.email);
     // const DB = JSON.parse(JSON.stringify(database.data));
   
@@ -35,4 +35,36 @@ import database from '../database/index.js';
 
  
   }
+
+  export const createList = (req, res) => {
+      const { title } = req.body;
+      const DB = database.data;
+      const user = DB.users.find(x => x.email === req.user.email);
+      const userID = user !== undefined && user !== null ? user.id : null;
+
+      const userBoard = DB.boards.find(b => b.userId === userID);
+  
+      if (!!userBoard) {
+          userBoard.lists.push(
+              {
+                  title,
+                  tasks: []
+              }
+          )
+      } else {
+        DB.boards.push({
+            userId: userID,
+            lists: [
+                {
+                    title,
+                    tasks: []
+                }
+            ]
+        })
+      }
+
+      database.write();
+      res.status(200).json();
+
+}
 

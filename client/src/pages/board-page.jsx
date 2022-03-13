@@ -49,6 +49,8 @@ const BoardPage = () => {
       },
     };
     setData(newState);
+    await tasksService.createList(title);
+
   };
   const updateListTitle = (title, listId) => {
     const list = data.lists[listId];

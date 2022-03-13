@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Box, Typography, Fab, IconButton,
+  Box, Typography, Fab, styled,
 } from '@mui/material';
 // import { Container } from '@mui/material';
 import { Outlet } from 'react-router-dom';
@@ -9,6 +9,19 @@ import CloseIcon from '@mui/icons-material/Close';
 import Navbar from '../partials/navbar/index';
 import NavbarContainer from '../partials/navbar/navbar-container';
 import DrawerMobile from './drawer-mobile';
+
+const Footer = styled(Box)(({ theme }) => ({
+  mt: '40px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  background: theme.palette.secondary.main,
+  width: '100%',
+  height: '48px',
+  color: 'white',
+  position: '',
+  bottom: 0,
+}));
 
 const PageLayout = () => {
   const [open, setOpen] = useState(false);
@@ -31,36 +44,23 @@ const PageLayout = () => {
       </Box>
       <Box>
         <DrawerMobile open={open} handleDrawerClose={handleDrawerClose} />
-        <IconButton>
-          <Fab
-            color="primary"
-            sx={{
-              position: 'fixed',
-              bottom: 55,
-              right: 20,
-              display: { xs: 'inline-flex', sm: 'none' },
-            }}
-            onClick={handleDrawerToggle}
-          >
-            { open ? <CloseIcon /> : <MenuIcon />}
-          </Fab>
-        </IconButton>
+        <Fab
+          color="primary"
+          sx={{
+            position: 'fixed',
+            bottom: 55,
+            right: 20,
+            display: { xs: 'inline-flex', sm: 'none' },
+          }}
+          onClick={handleDrawerToggle}
+        >
+          { open ? <CloseIcon /> : <MenuIcon />}
+        </Fab>
       </Box>
-      <Box sx={{
-        mt: '40px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: 'black',
-        width: '100%',
-        height: '48px',
-        color: 'white',
-        position: '',
-        bottom: 0,
-      }}
-      >
+      <Footer>
         <Typography>Ⓒ Tasky 2022</Typography>
-      </Box>
+      </Footer>
+
       {/* </Container> */}
     </Box>
   );

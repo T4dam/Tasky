@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { createList, getLists, saveTasks } from '../controllers/tasks-controller.js';
+import { createList, getLists, saveTasks, updateList } from '../controllers/tasks-controller.js';
 import authMiddleware from '../middleware/auth-middleware.js';
 
 
@@ -9,6 +9,7 @@ router.get('/', authMiddleware, getLists);
 
 router.post('/', authMiddleware, createList);
 
-router.post('/save-tasks', authMiddleware, saveTasks);
+router.post('/save-tasks', authMiddleware, createList);
 
+router.patch('/', authMiddleware, updateList);
 export default router;

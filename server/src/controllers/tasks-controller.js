@@ -67,6 +67,20 @@ import database from '../database/index.js';
       res.status(200).json();
 
 }
+export const updateList = (req, res) => {
+    const { title, listIndex } = req.body;
+    const DB = database.data;
+    const user = DB.users.find(x => x.email === req.user.email);
+    const userID = user !== undefined && user !== null ? user.id : null;
+
+    const userBoard = DB.boards.find(b => b.userId === userID);
+    const currentList = userBoard.lists.find((l, i) => i === listIndex);
+    if (title && title !== currentList.title) currentList.title = title;
+
+    database.write();
+    res.status(200).json();
+
+}
 
 export const saveTasks = (req, res) => {
     const { tasks, listIndex } = req.body;

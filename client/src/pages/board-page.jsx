@@ -57,7 +57,7 @@ const BoardPage = () => {
     await tasksService.createList(title);
 
   };
-  const updateListTitle = (title, listId) => {
+  const updateListTitle = async (title, listId) => {
     const list = data.lists[listId];
     list.title = title;
 
@@ -69,8 +69,12 @@ const BoardPage = () => {
       },
     };
     setData(newState);
+    const index =  data.listIds.findIndex(i => i === listId);
+    if (index >= 0) {
+      await tasksService.updateList(title, index);
+    }
   };
-  const onDragEnd = (result) => {
+  const onDragEnd = async (result) => {
     const {
       destination,
       source,
@@ -106,6 +110,7 @@ const BoardPage = () => {
         },
       };
       setData(newSate);
+      await tasksService.saveCards(list.cards, index);
     } else {
       sourceList.cards.splice(source.index, 1);
       destinationList.cards.splice(destination.index, 0, draggingCard);

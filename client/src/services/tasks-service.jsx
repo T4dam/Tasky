@@ -32,6 +32,16 @@ const createList = async (title) => {
   return null;
 };
 
+const updateList = async (title, listIndex) => {
+  const { token } = store.getState().auth;
+  await requester.patch('/', { title, listIndex }, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }).catch((err) => console.log(err));
+  return null;
+};
+
 const saveCards = async (tasks, listIndex) => {
   const { token } = store.getState().auth;
   await requester.post('/save-tasks', { tasks, listIndex }, {
@@ -46,4 +56,5 @@ export default {
   getLists,
   createList,
   saveCards,
+  updateList,
 };

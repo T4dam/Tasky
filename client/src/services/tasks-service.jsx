@@ -21,16 +21,29 @@ const getLists = async () => {
 //   const action = usersSlice.loadUsers({ users });
 //   store.dispatch(action);
 };
+
 const createList = async (title) => {
   const { token } = store.getState().auth;
   await requester.post('/', { title }, {
     headers: {
       Authorization: `Bearer ${token}`,
     },
-  });
+  }).catch((err) => console.log(err));
   return null;
 };
+
+const saveCards = async (tasks, listIndex) => {
+  const { token } = store.getState().auth;
+  await requester.post('/save-tasks', { tasks, listIndex }, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }).catch((err) => console.log(err));
+  return null;
+};
+
 export default {
   getLists,
   createList,
+  saveCards,
 };

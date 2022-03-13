@@ -22,19 +22,19 @@ import database from '../database/index.js';
     res.status(200).json(boardLists);
   }
 
-  export const saveTasks = (req, res) => {
-    //   req.body
+//   export const saveTasks = (req, res) => {
+//     //   req.body
 
-    //   const user = database.data.users.find(x => x.email === req.user.email);
-    // const DB = JSON.parse(JSON.stringify(database.data));
+//     //   const user = database.data.users.find(x => x.email === req.user.email);
+//     // const DB = JSON.parse(JSON.stringify(database.data));
   
-    // const tasks = DB.lists[0].tasks;
-    const dataToSave = req.data.board;
-    database.boards = [database.boards, ...dataToSave]
-    res.status(200).json(DB.lists);
+//     // const tasks = DB.lists[0].tasks;
+//     const dataToSave = req.data.board;
+//     database.boards = [database.boards, ...dataToSave]
+//     res.status(200).json(DB.lists);
 
  
-  }
+//   }
 
   export const createList = (req, res) => {
       const { title } = req.body;
@@ -68,3 +68,25 @@ import database from '../database/index.js';
 
 }
 
+export const saveTasks = (req, res) => {
+    const { tasks, listIndex } = req.body;
+    const DB = database.data;
+    const user = DB.users.find(x => x.email === req.user.email);
+    const userID = user !== undefined && user !== null ? user.id : null;
+
+    const userBoard = DB.boards.find(b => b.userId === userID);
+
+    if (!!userBoard) {
+        const currentList = userBoard.lists.find((l, i) => i === listIndex);
+
+        if (!!currentList) {
+            currentList.tasks = [...tasks];
+            database.write();
+            res.status(200).json();  
+        }
+        
+       
+    }
+    
+    res.status(200).json();   // pasidometi ka grazinti, jei neatlieka jokios operacijos
+}

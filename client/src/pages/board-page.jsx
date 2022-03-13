@@ -15,7 +15,7 @@ const BoardPage = () => {
   const [data, setData] = useState(store);
   // const { user } = useSelector(selectAuth);
 
-  const addNewCard = (content, listId) => {
+  const addNewCard = async (content, listId) => {
     const newCardId = createId();
     const newCard = {
       id: newCardId,
@@ -32,6 +32,11 @@ const BoardPage = () => {
       },
     };
     setData(newState);
+
+    const index =  data.listIds.findIndex(i => i === listId);
+    if (index >= 0) {
+      await tasksService.saveCards(list.cards, index);
+    }
   };
   const addNewList = async (title) => {
     // const newList = await ApiService.createList(title)

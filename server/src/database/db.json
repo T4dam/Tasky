@@ -72,7 +72,12 @@
         },
         {
           "title": "Labas",
-          "tasks": []
+          "tasks": [
+            {
+              "id": "c5a29eae-5912-4497-bc1a-cf65f46dae17",
+              "content": "test"
+            }
+          ]
         },
         {
           "title": "Naujas",

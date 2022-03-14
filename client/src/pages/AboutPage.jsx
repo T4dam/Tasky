@@ -33,7 +33,7 @@ const AboutPage = () => (
             {/* <cite>Brave New World</cite> */}
           </figcaption>
         </figure>
-        <Typography>
+        <Typography sx={{ textAlign: 'justify' }}>
           Vienas Harvardo verslo apžvalgos atliktas tyrimas
           parodė, kad 90 proc. vadovų dėl prasto laiko valdymo
           iššvaisto brangų laiką. Laiko eikvojimas ir

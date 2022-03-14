@@ -21,7 +21,7 @@ const HomePage = () => (
           <Typography element="h3" variant="h4" sx={{ fontWeight: '700', mb: '20px', textAlign: { xs: 'center', sm: 'left' } }}>
             Darbų sąrašas leidžia nustatyti svarbesnių užduočių prioritetus
           </Typography>
-          <Typography sx={{ display: 'flex', justifyContent: 'flex-end', textAlign: { xs: 'center', sm: 'left' } }}>
+          <Typography sx={{ display: 'flex', justifyContent: 'flex-end', textAlign: { xs: 'justify' } }}>
             Darbe ir namie sudarytas darbų sąrašas gali padėti nustatyti prioritetus darbo
             ir asmeninėms užduotims. Taip galėsite organizuoti ir pirmiausia
             atlikti svarbiausias užduotis. Darbų sąrašai gali būti naudojami
@@ -44,7 +44,7 @@ const HomePage = () => (
             Darbų sąrašai yra puiki motyvacinė priemonė,
             nes jais naudodamiesi galite išsiaiškinti savo tikslus
           </Typography>
-          <Typography sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Typography sx={{ display: 'flex', justifyContent: 'flex-end', textAlign: { xs: 'justify' } }}>
             Nešvaistysite laiko užduotims, kurioms nereikia
             tiesioginio dėmesio. Sąrašas padės jums susitelkti ties
             svarbiausiomis užduotimis. Turint darbų sąrašą lengviau susisteminti
@@ -62,7 +62,7 @@ const HomePage = () => (
           <Typography element="h3" variant="h4" sx={{ fontWeight: '700', mb: '20px', textAlign: { xs: 'center', sm: 'left' } }}>
             Darbų sąrašas veikia kaip išorinė atminties priemonė
           </Typography>
-          <Typography sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <Typography sx={{ display: 'flex', justifyContent: 'flex-end', textAlign: { xs: 'justify' } }}>
             Vienu metu galima laikyti tik keletą informacijos vienetų.
             Turėkite darbų sąrašą ir galėsite sekti viską, o ne tik kelias
             užduotis, kurias turite atlikti. Jūsų darbų sąrašas taip pat

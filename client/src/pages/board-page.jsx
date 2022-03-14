@@ -89,9 +89,10 @@ const BoardPage = () => {
       },
     };
     setData(newState)
-    const indexList =  data.listIds.findIndex(i => i === listId);
-    if (indexList >= 0) {
-      await tasksService.saveCards(list.cards, indexList);
+
+    const indexOfList =  data.listIds.findIndex(i => i === listId);
+    if (indexOfList >= 0) {
+      await tasksService.saveCards(list.cards, indexOfList);
     }
   }
   //   const { listID, id } = action.payload;
@@ -155,6 +156,7 @@ const BoardPage = () => {
         },
       };
       setData(newState);
+      
     }
   };
 

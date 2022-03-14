@@ -30,7 +30,7 @@ const List = ({ list, index }) => {
                   sx={{ marginTop: '8px' }}
                 >
                   {list.cards.map((card, index) => (
-                    <Card key={card.id} card={card} index={index} />
+                    <Card key={card.id} listId={list.id} card={card} index={index} />
                   ))}
                   {provided.placeholder}
                 </Box>

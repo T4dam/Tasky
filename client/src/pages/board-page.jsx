@@ -76,7 +76,19 @@ const BoardPage = () => {
   };
 
   const deleteCard = (index, listId) => {
-    const newCards = lists[listId].cards.filter((card, i) => index !== i);
+    const newCards = data.lists[listId].cards.filter((card, i) => index !== i);
+    console.log(newCards)
+    const list = data.lists[listId];
+    list.cards = [...newCards];
+
+    const newState = {
+      ...data,
+      [listId]: {
+        ...list,
+        cards: [...newCards],
+      },
+    };
+    setData(newState)
   }
   //   const { listID, id } = action.payload;
 

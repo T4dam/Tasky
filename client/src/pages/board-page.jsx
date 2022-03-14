@@ -75,7 +75,7 @@ const BoardPage = () => {
     }
   };
 
-  const deleteCard = (index, listId) => {
+  const deleteCard = async (index, listId) => {
     const newCards = data.lists[listId].cards.filter((card, i) => index !== i);
     console.log(newCards)
     const list = data.lists[listId];
@@ -89,6 +89,10 @@ const BoardPage = () => {
       },
     };
     setData(newState)
+    const indexList =  data.listIds.findIndex(i => i === listId);
+    if (indexList >= 0) {
+      await tasksService.saveCards(list.cards, indexList);
+    }
   }
   //   const { listID, id } = action.payload;
 

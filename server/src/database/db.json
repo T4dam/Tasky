@@ -45,28 +45,8 @@
           "title": "Test",
           "tasks": [
             {
-              "id": "card-6",
-              "content": "Išgerti vitaminus"
-            },
-            {
-              "id": "card-3",
-              "content": "Penktadienio surprize vakarėlis"
-            },
-            {
-              "id": "card-4",
-              "content": "Išgerti vitaminus"
-            },
-            {
-              "id": "card-1",
-              "content": "'Susitikimas su darbų vygdytoju"
-            },
-            {
-              "id": "card-5",
-              "content": "Penktadienio surprize vakarėlis"
-            },
-            {
-              "id": "card-2",
-              "content": "Pietus pas Martą"
+              "id": "ac73de74-4bb0-4e33-a5f3-f8c5f3052ff6",
+              "content": "hello \n"
             }
           ]
         },
@@ -74,20 +54,8 @@
           "title": "Labasas123",
           "tasks": [
             {
-              "id": "4452bfad-14c9-45a2-a6ea-5b71f90c6589",
-              "content": "test3"
-            },
-            {
-              "id": "be04bee5-466d-4126-8771-9cbcc7e06d51",
-              "content": "test2"
-            },
-            {
-              "id": "d6f52873-a965-47db-bf4d-8b6206811834",
-              "content": "test1"
-            },
-            {
-              "id": "c5a29eae-5912-4497-bc1a-cf65f46dae17",
-              "content": "test"
+              "id": "0815c9c0-ebce-4c3e-aefd-1070b97031b9",
+              "content": "happy"
             }
           ]
         }

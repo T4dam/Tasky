@@ -74,6 +74,17 @@ const BoardPage = () => {
       await tasksService.updateList(title, index);
     }
   };
+
+  const deleteCard = (index, listId) => {
+    const newCards = lists[listId].cards.filter((card, i) => index !== i);
+  }
+  //   const { listID, id } = action.payload;
+
+  //   const list = state[listID];
+
+  //   return { ...state, [listID]: { ...list, cards: newCards } };
+  
+  // }
   const onDragEnd = async (result) => {
     const {
       destination,
@@ -110,7 +121,11 @@ const BoardPage = () => {
         },
       };
       setData(newSate);
-      await tasksService.saveCards(list.cards, index);
+
+      const listIndex = data.listIds.indexOf(sourceList.id);
+      if (listIndex >= 0) {
+        await tasksService.saveCards(destinationList.cards, listIndex);
+      }
     } else {
       sourceList.cards.splice(source.index, 1);
       destinationList.cards.splice(destination.index, 0, draggingCard);
@@ -183,7 +198,7 @@ const BoardPage = () => {
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <StoreApi.Provider value={{ addNewCard, addNewList, updateListTitle }}>
+    <StoreApi.Provider value={{ addNewCard, addNewList, updateListTitle, deleteCard }}>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="Board" direction="horizontal" type="list">
           {(provided) => (

@@ -51,10 +51,20 @@ const saveCards = async (tasks, listIndex) => {
   }).catch((err) => console.log(err));
   return null;
 };
+const updateCards = async (tasks, listIndex) => {
+  const { token } = store.getState().auth;
+  await requester.post('/save-tasks', { tasks, listIndex }, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }).catch((err) => console.log(err));
+  return null;
+};
 
 export default {
   getLists,
   createList,
   saveCards,
   updateList,
+  updateCards,
 };

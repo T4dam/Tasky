@@ -104,3 +104,25 @@ export const saveTasks = (req, res) => {
     
     res.status(200).json();   // pasidometi ka grazinti, jei neatlieka jokios operacijos
 }
+export const updateTasks = (req, res) => {
+    const { tasks, listIndex } = req.body;
+    const DB = database.data;
+    const user = DB.users.find(x => x.email === req.user.email);
+    const userID = user !== undefined && user !== null ? user.id : null;
+
+    const userBoard = DB.boards.find(b => b.userId === userID);
+
+    if (!!userBoard) {
+        const currentList = userBoard.lists.find((l, i) => i === listIndex);
+
+        if (!!currentList) {
+            currentList.tasks = [...tasks];
+            database.write();
+            res.status(200).json();  
+        }
+        
+       
+    }
+    
+    res.status(200).json();   // pasidometi ka grazinti, jei neatlieka jokios operacijos
+}

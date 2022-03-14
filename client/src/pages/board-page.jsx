@@ -57,6 +57,7 @@ const BoardPage = () => {
     await tasksService.createList(title);
 
   };
+
   const updateListTitle = async (title, listId) => {
     const list = data.lists[listId];
     list.title = title;
@@ -118,6 +119,8 @@ const BoardPage = () => {
       const newListIds = data.listIds;
       newListIds.splice(source.index, 1);
       newListIds.splice(destination.index, 0, draggableId);
+
+      await saveAllListsToDB();
       return;
     }
 
@@ -158,6 +161,22 @@ const BoardPage = () => {
       setData(newState);
       
     }
+  };
+
+  const saveAllListsToDB = async () => {
+    let listsArray = [];
+
+    for (let i = 0; i < data.listIds.length; i++) {
+      const listId = data.listIds[i];
+      const list = data.lists[listId];
+      listsArray.push({
+          id: list.id,
+          title: list.title,
+          tasks: list.cards  
+      });
+    }
+
+    await tasksService.saveLists(listsArray);
   };
 
   useEffect(() => {

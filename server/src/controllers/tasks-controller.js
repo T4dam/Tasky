@@ -82,6 +82,22 @@ export const updateList = (req, res) => {
 
 }
 
+export const saveLists = (req, res) => {
+    const { lists } = req.body;
+    const DB = database.data;
+    const user = DB.users.find(x => x.email === req.user.email);
+    const userID = user !== undefined && user !== null ? user.id : null;
+
+    const userBoard = DB.boards.find(b => b.userId === userID);
+    if (userBoard) {
+        userBoard.lists = [...lists];
+        database.write();
+        res.status(200).json();
+    } else {
+        res.status(400).json();
+    }
+};
+
 export const saveTasks = (req, res) => {
     const { tasks, listIndex } = req.body;
     const DB = database.data;
@@ -90,19 +106,18 @@ export const saveTasks = (req, res) => {
 
     const userBoard = DB.boards.find(b => b.userId === userID);
 
-    if (!!userBoard) {
+    if (userBoard) {
         const currentList = userBoard.lists.find((l, i) => i === listIndex);
 
-        if (!!currentList) {
+        if (currentList) {
             currentList.tasks = [...tasks];
             database.write();
             res.status(200).json();  
+        } else {
+            res.status(400).json()
         }
-        
-       
     }
-    
-    res.status(200).json();   // pasidometi ka grazinti, jei neatlieka jokios operacijos
+    res.status(200).json();
 }
 export const updateTasks = (req, res) => {
     const { tasks, listIndex } = req.body;
@@ -112,17 +127,19 @@ export const updateTasks = (req, res) => {
 
     const userBoard = DB.boards.find(b => b.userId === userID);
 
-    if (!!userBoard) {
+    if (userBoard) {
         const currentList = userBoard.lists.find((l, i) => i === listIndex);
 
-        if (!!currentList) {
+        if (currentList) {
             currentList.tasks = [...tasks];
             database.write();
             res.status(200).json();  
+        } else {
+            res.status(400).json()
         }
         
        
     }
     
-    res.status(200).json();   // pasidometi ka grazinti, jei neatlieka jokios operacijos
+    res.status(200).json(); 
 }

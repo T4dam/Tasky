@@ -48,7 +48,7 @@ const Card = ({ card, index, listId }) => {
                 <IconButton onClick={handleDelete} size="small">
                   <CancelIcon fontSize="small" />
                 </IconButton>
-                <IconButton onClick={handleOpen} size="small">
+                <IconButton onClick={handleOpen} key={index} size="small">
                   <DriveFileRenameOutlineIcon fontSize="small" />
                 </IconButton>
               </Box>

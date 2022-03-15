@@ -1,6 +1,4 @@
-const cards = [
-  {},
-];
+const cards = [];
 
 const data = {
   lists: {

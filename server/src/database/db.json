@@ -35,6 +35,14 @@
       "password": "Labas123",
       "role": "USER",
       "imgSrc": "/images/img-1646937441813.jpg"
+    },
+    {
+      "id": "500efc1f-0336-4d9b-81f7-88449d500ea7",
+      "email": "Naujausias@gmail.com",
+      "name": "naujas",
+      "surname": "Naujausias",
+      "password": "Naujas123",
+      "role": "USER"
     }
   ],
   "boards": [
@@ -91,44 +99,7 @@
     },
     {
       "userId": "89256246-7ab3-4b4d-a133-7b8bfca11e43",
-      "lists": [
-        {
-          "id": "90ef93df-3c1a-4dd3-b94e-78f7873fb88c",
-          "title": "asdagdgdg",
-          "tasks": []
-        },
-        {
-          "id": "5ab1287b-9207-4544-8408-871c8c5afc87",
-          "title": "dfgdfgdfv vb ",
-          "tasks": [
-            {
-              "id": "cbde786c-1145-487f-af8f-bbc28dfb5b74",
-              "content": "dfgdfg"
-            },
-            {
-              "id": "b33d5425-4b87-4b7a-8a06-e722bc8fb5d8",
-              "content": "adsadasd"
-            },
-            {
-              "id": "e2659f6d-a645-47c6-b3d3-aa65c9b83a82",
-              "content": "asd"
-            },
-            {
-              "id": "15754f15-b9f5-489d-9d2b-872e05d4963d",
-              "content": "dfgdfgdfgdfgfd"
-            },
-            {
-              "id": "07a75cc9-8f1a-4a2f-bc63-8e077efda91e",
-              "content": "asdasd"
-            }
-          ]
-        },
-        {
-          "id": "6ab5a86c-3cd6-4226-a243-2fce9f4e7a73",
-          "title": "adsasd",
-          "tasks": []
-        }
-      ]
+      "lists": []
     }
   ]
 }

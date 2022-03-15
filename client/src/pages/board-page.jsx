@@ -96,6 +96,28 @@ const BoardPage = () => {
       await tasksService.saveCards(list.cards, indexOfList);
     }
   }
+
+  const deleteList = async (listId) => {
+    console.log("deleteList")
+    const newListsIds = data.listIds.filter((list) => list !== listId);
+    console.log(newListsIds)
+    console.log(listId)
+
+    let newLists = {};
+    for (let i = 0; i < newListsIds.length; i++) {
+      const listId = newListsIds[i];
+      newLists[listId] = data.lists[listId];
+    }
+
+    const newState = {
+      lists: newLists,
+      listIds: newListsIds
+    };
+    console.log(newState);
+    setData(newState);
+    await saveAllListsToDB(newState);
+  };
+  
   //   const { listID, id } = action.payload;
 
   //   const list = state[listID];
@@ -119,7 +141,7 @@ const BoardPage = () => {
       const newListIds = data.listIds;
       newListIds.splice(source.index, 1);
       newListIds.splice(destination.index, 0, draggableId);
-
+      console.log('dragged a bit');
       await saveAllListsToDB();
       return;
     }
@@ -159,21 +181,35 @@ const BoardPage = () => {
         },
       };
       setData(newState);
+      console.log('dragged a bit');
+
       await saveAllListsToDB()
     }
   };
 
-  const saveAllListsToDB = async () => {
+  const saveAllListsToDB = async (newData = undefined) => {
     let listsArray = [];
 
-    for (let i = 0; i < data.listIds.length; i++) {
-      const listId = data.listIds[i];
-      const list = data.lists[listId];
-      listsArray.push({
-          id: list.id,
-          title: list.title,
-          tasks: list.cards  
-      });
+    if (newData) {
+      for (let i = 0; i < newData.listIds.length; i++) {
+        const listId = newData.listIds[i];
+        const list = newData.lists[listId];
+        listsArray.push({
+            id: list.id,
+            title: list.title,
+            tasks: list.cards  
+        });
+      }
+    } else {
+      for (let i = 0; i < data.listIds.length; i++) {
+        const listId = data.listIds[i];
+        const list = data.lists[listId];
+        listsArray.push({
+            id: list.id,
+            title: list.title,
+            tasks: list.cards  
+        });
+      }
     }
 
     await tasksService.saveLists(listsArray);
@@ -235,7 +271,7 @@ const BoardPage = () => {
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <StoreApi.Provider value={{ addNewCard, addNewList, updateListTitle, deleteCard }}>
+    <StoreApi.Provider value={{ addNewCard, addNewList, updateListTitle, deleteCard, deleteList }}>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="Board" direction="horizontal" type="list">
           {(provided) => (

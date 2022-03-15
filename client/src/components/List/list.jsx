@@ -1,11 +1,12 @@
 /* eslint-disable */
-import React from 'react';
+import React, {useContext} from 'react';
 import { Paper, styled, CssBaseline, Box, IconButton } from '@mui/material';
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import Title from './title';
 import Card from './card';
 import InputContainer from '../Input/input-container';
 import CancelIcon from '@mui/icons-material/Cancel';
+import storeApi from '../../utilities/storeApi';
 
 const ListContainer = styled(Paper)(({ theme }) => ({
   backgroundColor: '#dfe3e6',
@@ -16,6 +17,12 @@ const ListContainer = styled(Paper)(({ theme }) => ({
 }));
 
 const List = ({ list, index }) => {
+  const {deleteList} = useContext(storeApi);
+
+  const handleDeleteList = () => {
+    deleteList(list.id);
+  };
+
   return (
     <Draggable draggableId={list.id} index={index}>
       {(provided) => (
@@ -24,7 +31,7 @@ const List = ({ list, index }) => {
             <CssBaseline />
             <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
             <Title title={list.title} listId={list.id} />
-            <IconButton sx={{color:"black"}} size="small">
+            <IconButton onClick={handleDeleteList} sx={{color:"black"}} size="small">
             <CancelIcon fontSize='small'/>
             </IconButton>
             </Box>

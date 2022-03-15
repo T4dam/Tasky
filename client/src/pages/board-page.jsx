@@ -159,7 +159,7 @@ const BoardPage = () => {
         },
       };
       setData(newState);
-      
+      await saveAllListsToDB()
     }
   };
 

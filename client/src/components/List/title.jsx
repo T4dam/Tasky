@@ -4,7 +4,7 @@ import {
   InputBase,
   Box,
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
+// import MenuIcon from '@mui/icons-material/Menu';
 import storeApi from '../../utilities/storeApi';
 
 const InputStyle = {
@@ -42,7 +42,7 @@ const Title = ({ title, listId }) => {
           />
         </Box>
       ) : (
-        <Box sx={{ display: 'flex' }}>
+        <Box>
           <Typography
             onMouseDown={() => setOpen(!open)}
             sx={{
@@ -51,7 +51,6 @@ const Title = ({ title, listId }) => {
           >
             {title}
           </Typography>
-          <MenuIcon />
         </Box>
       )}
     </Box>

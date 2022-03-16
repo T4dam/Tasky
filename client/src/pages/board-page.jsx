@@ -277,8 +277,9 @@ const BoardPage = () => {
           {(provided) => (
             <Box
               sx={{
-                my: 3,
-                pl: 2,
+                mt: 7.5,
+                mb: 2,
+                pl: 1.7,
                 display: 'flex',
                 minHeight: '100vh',
                 overflowY: 'auto',

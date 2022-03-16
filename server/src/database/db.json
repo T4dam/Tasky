@@ -10,24 +10,6 @@
       "imgSrc": "/images/img-1645608179242.jpeg"
     },
     {
-      "id": "85e087fb-7a03-4824-9e6f-fcb504c5496c",
-      "email": "admsadin@gmail.com",
-      "name": "Tadas",
-      "surname": "Delininkaaaaitis",
-      "password": "Keturkojis1",
-      "role": "USER",
-      "imgSrc": "/images/img-1645600484996.jpeg"
-    },
-    {
-      "id": "700e0138-6636-4ffd-b9e4-91369709316f",
-      "email": "Markize@mai.com",
-      "name": "Makize",
-      "surname": "Markiza",
-      "password": "Markize1",
-      "role": "USER",
-      "imgSrc": "/images/img-1645607524564.jpeg"
-    },
-    {
       "id": "89256246-7ab3-4b4d-a133-7b8bfca11e43",
       "email": "Labas@gmail.com",
       "name": "Labanauskas",
@@ -37,12 +19,13 @@
       "imgSrc": "/images/img-1646937441813.jpg"
     },
     {
-      "id": "500efc1f-0336-4d9b-81f7-88449d500ea7",
-      "email": "Naujausias@gmail.com",
-      "name": "naujas",
-      "surname": "Naujausias",
-      "password": "Naujas123",
-      "role": "USER"
+      "id": "6dc1bf91-5daa-4039-aaef-530fcfb456b1",
+      "email": "tadas@delininkaitis.lt",
+      "name": "Tadas",
+      "surname": "Delininkaitis",
+      "password": "Tadas123",
+      "role": "USER",
+      "imgSrc": "/images/img-1647346165388.jpeg"
     }
   ],
   "boards": [
@@ -50,56 +33,118 @@
       "userId": "1",
       "lists": [
         {
-          "id": "2d895f6a-ba3b-4e27-8ee0-821b60a3428b",
-          "title": "Test",
-          "tasks": [
-            {
-              "id": "aec9c696-4f92-41bf-855b-ff790dc86fb0",
-              "content": "sadasd"
-            }
-          ]
-        },
-        {
-          "id": "e2bcc17c-2bbc-40a3-904e-6e86805213ac",
+          "id": "a4484f78-a8ca-4c3f-b113-b09552571847",
           "title": "Labasas123",
-          "tasks": [
-            {
-              "id": "3fa1ba56-a48f-4892-a8b1-64cb58049ce4",
-              "content": "asdasd"
-            },
-            {
-              "id": "1549e7c2-c6a1-4b42-b317-34fbaf1d4cb5",
-              "content": "asdasdasdasdasdasd"
-            },
-            {
-              "id": "908c38ca-5daf-4235-93c7-7a2956e3a30e",
-              "content": "asdasds"
-            }
-          ]
+          "tasks": []
         },
         {
-          "id": "96a72cbe-054d-4055-a726-439010fb8304",
+          "id": "c58eb1cd-e290-4114-aaed-a3731733b2cb",
+          "title": "Test",
+          "tasks": []
+        },
+        {
+          "id": "ed7c47da-27d0-462e-8090-6c7983889c24",
           "title": "jn",
-          "tasks": [
-            {
-              "id": "8c770dd4-037f-45d7-b442-f863bc979ad6",
-              "content": "werwerwe"
-            },
-            {
-              "id": "f02cfa44-b0d8-48bf-a743-f8a7b1da2d1e",
-              "content": "ewrwerwerwerwerwe"
-            },
-            {
-              "id": "7433e9f7-62ed-4f93-9d22-54d524539931",
-              "content": "asdasdasdasd"
-            }
-          ]
+          "tasks": []
         }
       ]
     },
     {
       "userId": "89256246-7ab3-4b4d-a133-7b8bfca11e43",
       "lists": []
+    },
+    {
+      "userId": "6dc1bf91-5daa-4039-aaef-530fcfb456b1",
+      "lists": [
+        {
+          "id": "fe854d52-a477-46e1-9522-472c7ac03956",
+          "title": "Brainstorm idėjos",
+          "tasks": [
+            {
+              "id": "0111a009-43b6-4d4c-bad9-088717298af3",
+              "content": "Didinti Instagram sekėjų skaičių"
+            },
+            {
+              "id": "f94ae2e3-4e2d-46cd-adda-9d4748f15f6b",
+              "content": "Pasiekiamumo didinimas per kitus socialinius tinklus"
+            },
+            {
+              "id": "dedd9ced-67c4-4fa3-a16f-47ae82713b39",
+              "content": "Didinti \"backlink'ų\" skaičių dėl SEO"
+            }
+          ]
+        },
+        {
+          "id": "c9bb0b9b-7acf-41ff-af6e-8cfaa3ae62b0",
+          "title": "reikia atlikti",
+          "tasks": [
+            {
+              "id": "6c97064c-60c9-4975-a365-815822da4663",
+              "content": "Sudėti prekių aprašymus"
+            },
+            {
+              "id": "243f3612-53f8-4abd-a71c-8bec5addf164",
+              "content": "Nustatyti siuntimo kainą Lietuvoje"
+            },
+            {
+              "id": "ac561f7b-e0ce-42aa-9b00-5a86e574b29e",
+              "content": "Rasti prekių pakavimo tiekėją"
+            },
+            {
+              "id": "f880cd81-f2a5-435a-918a-8f5ffe2323fa",
+              "content": "Šventiniai išskirtiniai pasiūlymai"
+            },
+            {
+              "id": "0c9f64aa-aa43-4547-915e-a2bc65d38f3d",
+              "content": "Reklamos kampanijos užsakymas"
+            }
+          ]
+        },
+        {
+          "id": "51060465-2bec-4688-9d8a-6499a786c58a",
+          "title": "šiuo metu atliekama",
+          "tasks": [
+            {
+              "id": "ba7362a0-5c2f-4c59-9fe4-8efe9cff34dd",
+              "content": "Ieškoma produktų pardavimui"
+            },
+            {
+              "id": "dd2dc2f0-f02c-4606-802a-988edb981f96",
+              "content": "Puslapio dizaino darbai"
+            }
+          ]
+        },
+        {
+          "id": "7d47eb62-7177-44f6-bb05-3a04694a85d6",
+          "title": "jau atlikta",
+          "tasks": [
+            {
+              "id": "f5aa1286-86cb-436b-94fc-9943e07d4a0b",
+              "content": "Rinkos analizė"
+            },
+            {
+              "id": "34048161-8c6a-4f34-8aee-efd8de622b82",
+              "content": "Nupirktas domenas"
+            },
+            {
+              "id": "6ac1ec72-5f92-4dd6-be0c-62961268d90c",
+              "content": "Landing page patalpinimas"
+            },
+            {
+              "id": "1371e26a-8718-48d5-8fd5-a8badffc55bc",
+              "content": "Misija, Vizija, Tikslas"
+            },
+            {
+              "id": "aa34b59c-fbe6-46b6-b3da-c838b4f27acd",
+              "content": "Sukurti facbook paskyra dėl informacijos sklaidos"
+            },
+            {
+              "id": "7d3b0c0a-1f60-4c89-9c05-2f8f2d192a40",
+              "content": "Nauji banneriai ir atributikos "
+            }
+          ]
+        }
+      ]
     }
   ]
 }

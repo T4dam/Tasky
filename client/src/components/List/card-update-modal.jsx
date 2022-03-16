@@ -1,5 +1,6 @@
 /*eslint-disable*/
 import * as React from 'react';
+import {useState} from 'react';
 import { Box, Modal, TextField, Button, Typography, IconButton }from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';
 
@@ -12,13 +13,25 @@ const style = {
   background: 'white',
   padding: '20px',
   borderRadius: '6px',
-  
+  minWidth: '250px',
 };
 
-const CardUpdateModal = ({ isOpen, handleClose }) => {
+const CardUpdateModal = ({ isOpen, handleClose, cardContent }) => {
     // const handleActiveColor = (color) => {
     //     console.log(color);
     // }
+    // console.log(cardContent)
+    const [ textValue, setTextValue ] = useState(cardContent);
+
+    const handleChange = e => {
+        setTextValue(e.target.value);
+      };
+
+    //   const saveTextValue = () => {
+    //         // handleUpdatedText(textValue);
+
+    //     //   handleClose();
+    //   }
     return (
         // <StoreApi.Provider value={{ addNewCard }}>
 
@@ -33,11 +46,12 @@ const CardUpdateModal = ({ isOpen, handleClose }) => {
             style={{ overflow: 'hidden' }}
             multiline
             fullWidth
-            // value={cardContent}
+            value={textValue}
             placeholder="Redaguojamas tekstas"
-            
+            onChange={handleChange}
             />
             <Button
+            onClick={handleClose}
           variant="contained"
           color="primary"
           type="submit"

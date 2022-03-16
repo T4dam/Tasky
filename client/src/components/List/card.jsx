@@ -26,7 +26,9 @@ const CardyContainer = styled(Box)(({ theme }) => ({
 const Card = ({ card, index, listId }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const handleOpen = () => setIsOpen(true);
-  const handleClose = () => setIsOpen(false);
+  const handleClose = () => {
+    setIsOpen(false);
+  };
 
   const { deleteCard } = useContext(storeApi);
   const handleDelete = () => {
@@ -34,7 +36,11 @@ const Card = ({ card, index, listId }) => {
   };
   return (
     <>
-      <CardUpdateModal isOpen={isOpen} handleClose={handleClose} />
+      <CardUpdateModal
+        isOpen={isOpen}
+        handleClose={handleClose}
+        cardContent={card.content}
+      />
       <Draggable draggableId={card.id} index={index}>
         {(provided) => (
           <Cardy
@@ -43,7 +49,7 @@ const Card = ({ card, index, listId }) => {
             {...provided.dragHandleProps}
           >
             <CardyContainer sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <Typography>{card.content}</Typography>
+              <Typography sx={{ pb: '8px' }}>{card.content}</Typography>
               <Box sx={{ display: 'flex', flexDirection: 'column', paddingBottom: 0 }}>
                 <IconButton onClick={handleDelete} size="small">
                   <CancelIcon fontSize="small" />

@@ -6,10 +6,9 @@ const data = {
       id: 'list-1',
       title: '',
       cards,
-      board: 'board-0',
     },
   },
-  listIds: ['list-1'],
+  listIds: [],
 };
 
 export default data;

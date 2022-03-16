@@ -117,4 +117,4 @@ Tadas Delininkaitis- [@LinkedIn](https://www.linkedin.com/in/tadasdelininkaitis/
 
 <p align="right">(<a href="#top">Grįžti į viršų</a>)</p>
 
-
+[product-screenshot]: public/demo.png

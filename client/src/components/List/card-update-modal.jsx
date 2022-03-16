@@ -16,7 +16,7 @@ const style = {
   minWidth: '250px',
 };
 
-const CardUpdateModal = ({ isOpen, handleClose, cardContent, props }) => {
+const CardUpdateModal = ({ isOpen, handleClose, cardContent, handleTextUpdate }) => {
     // const handleActiveColor = (color) => {
     //     console.log(color);
     // }
@@ -27,7 +27,7 @@ const CardUpdateModal = ({ isOpen, handleClose, cardContent, props }) => {
         setTextValue(e.target.value);
       };
       const handleEditedText = (textValue) => {
-console.log(handleEditedText)
+        handleTextUpdate(textValue);
       }
     //   const saveTextValue = () => {
     //         // handleUpdatedText(textValue);
@@ -53,7 +53,7 @@ console.log(handleEditedText)
             onChange={handleChange}
             />
             <Button
-            onClick={handleClose}
+            onClick={() => handleEditedText(textValue)}
           variant="contained"
           color="primary"
           type="submit"

@@ -97,6 +97,32 @@ const BoardPage = () => {
     }
   }
 
+  const updateCard = async (index, listId, newText) => {
+
+    const newCards = data.lists[listId].cards.map((c, i) => i === index ? ({...c, content: newText}) : c);
+    console.log(newCards, listId)
+    const list = data.lists[listId];
+    list.cards = [...newCards];
+
+    const newState = {
+      ...data,
+      lists: {
+        ...data.lists,
+        [listId]: {
+          ...list,
+          cards: [...newCards],
+        },
+      }
+    };
+    console.log(newState)
+    setData(newState)
+
+    const indexOfList =  data.listIds.findIndex(i => i === listId);
+    if (indexOfList >= 0) {
+      await tasksService.saveCards(list.cards, indexOfList);
+    }
+  }
+
   const deleteList = async (listId) => {
     const newListsIds = data.listIds.filter((list) => list !== listId);
 
@@ -234,7 +260,7 @@ const BoardPage = () => {
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <StoreApi.Provider value={{ addNewCard, addNewList, updateListTitle, deleteCard, deleteList }}>
+    <StoreApi.Provider value={{ addNewCard, addNewList, updateListTitle, deleteCard, deleteList, updateCard }}>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="Board" direction="horizontal" type="list">
           {(provided) => (

@@ -57,7 +57,7 @@
       "userId": "6dc1bf91-5daa-4039-aaef-530fcfb456b1",
       "lists": [
         {
-          "id": "697a2b85-c3a8-4dc7-aa79-db4baa82a4c5",
+          "id": "2d11b1b5-4c24-4174-b113-ef2b50fbd12a",
           "title": "Brainstorm idėjos",
           "tasks": [
             {
@@ -69,13 +69,13 @@
               "content": "Pasiekiamumo didinimas per kitus socialinius tinklus"
             },
             {
-              "id": "dedd9ced-67c4-4fa3-a16f-47ae82713b39",
+              "id": "87430733-d5bc-4eeb-9636-35da6565ce05",
               "content": "Didinti \"backlink'ų\" skaičių dėl SEO"
             }
           ]
         },
         {
-          "id": "3376a86c-d848-4cd4-8372-b7726c6abf2e",
+          "id": "8b56f319-350d-4e77-a4b7-59c063621670",
           "title": "reikia atlikti",
           "tasks": [
             {
@@ -101,7 +101,7 @@
           ]
         },
         {
-          "id": "11583fb8-4681-4d01-ad55-d7ecf1e161b2",
+          "id": "a58b8989-f3d5-49f3-8b1a-5a1d687c0f01",
           "title": "šiuo metu atliekama",
           "tasks": [
             {
@@ -115,7 +115,7 @@
           ]
         },
         {
-          "id": "80bbd258-1ea7-4fbf-bbfd-44badbdf5337",
+          "id": "8c51b9d0-d781-4a1c-a6d1-5dd6571b3cb7",
           "title": "jau atlikta",
           "tasks": [
             {

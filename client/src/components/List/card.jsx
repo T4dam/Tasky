@@ -32,10 +32,16 @@ const Card = ({ card, index, listId }) => {
     setIsOpen(false);
   };
 
-  const { deleteCard } = useContext(storeApi);
+  const { deleteCard, updateCard } = useContext(storeApi);
+
   const handleDelete = () => {
     deleteCard(index, listId);
   };
+  const handleTextUpdate = (text) => {
+    handleClose();
+    updateCard(index, listId, text)
+  };
+  
   return (
     <>
       {/* <h1>{word}</h1> */}
@@ -43,6 +49,7 @@ const Card = ({ card, index, listId }) => {
         isOpen={isOpen}
         handleClose={handleClose}
         cardContent={card.content}
+        handleTextUpdate={handleTextUpdate}
         // changeWord={(word) => setWord(word)}
       />
       <Draggable draggableId={card.id} index={index}>

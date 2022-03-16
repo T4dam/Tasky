@@ -26,6 +26,15 @@
       "password": "Tadas123",
       "role": "USER",
       "imgSrc": "/images/img-1647346165388.jpeg"
+    },
+    {
+      "id": "4d50a013-6ad2-4d19-ba61-256427e60274",
+      "email": "uogius@gmail.com",
+      "name": "Uogius va",
+      "surname": "Serbentautas",
+      "password": "Labas123",
+      "role": "USER",
+      "imgSrc": "/images/img-1647448067530.jpg"
     }
   ],
   "boards": [
@@ -57,74 +66,16 @@
       "userId": "6dc1bf91-5daa-4039-aaef-530fcfb456b1",
       "lists": [
         {
-          "id": "2d11b1b5-4c24-4174-b113-ef2b50fbd12a",
-          "title": "Brainstorm idėjos",
+          "id": "7e90716f-118f-4872-a16d-187c885184b7",
+          "title": "labas",
           "tasks": [
             {
-              "id": "0111a009-43b6-4d4c-bad9-088717298af3",
-              "content": "Didinti Instagram sekėjų skaičių"
-            },
-            {
-              "id": "f94ae2e3-4e2d-46cd-adda-9d4748f15f6b",
-              "content": "Pasiekiamumo didinimas per kitus socialinius tinklus"
+              "id": "1371e26a-8718-48d5-8fd5-a8badffc55bc",
+              "content": "Misija, Vizija, Tikslas"
             },
             {
               "id": "87430733-d5bc-4eeb-9636-35da6565ce05",
               "content": "Didinti \"backlink'ų\" skaičių dėl SEO"
-            }
-          ]
-        },
-        {
-          "id": "8b56f319-350d-4e77-a4b7-59c063621670",
-          "title": "reikia atlikti",
-          "tasks": [
-            {
-              "id": "6c97064c-60c9-4975-a365-815822da4663",
-              "content": "Sudėti prekių aprašymus"
-            },
-            {
-              "id": "243f3612-53f8-4abd-a71c-8bec5addf164",
-              "content": "Nustatyti siuntimo kainą Lietuvoje"
-            },
-            {
-              "id": "ac561f7b-e0ce-42aa-9b00-5a86e574b29e",
-              "content": "Rasti prekių pakavimo tiekėją"
-            },
-            {
-              "id": "f880cd81-f2a5-435a-918a-8f5ffe2323fa",
-              "content": "Šventiniai išskirtiniai pasiūlymai"
-            },
-            {
-              "id": "0c9f64aa-aa43-4547-915e-a2bc65d38f3d",
-              "content": "Reklamos kampanijos užsakymas"
-            }
-          ]
-        },
-        {
-          "id": "a58b8989-f3d5-49f3-8b1a-5a1d687c0f01",
-          "title": "šiuo metu atliekama",
-          "tasks": [
-            {
-              "id": "ba7362a0-5c2f-4c59-9fe4-8efe9cff34dd",
-              "content": "Ieškoma produktų pardavimui"
-            },
-            {
-              "id": "dd2dc2f0-f02c-4606-802a-988edb981f96",
-              "content": "Puslapio dizaino darbai"
-            }
-          ]
-        },
-        {
-          "id": "8c51b9d0-d781-4a1c-a6d1-5dd6571b3cb7",
-          "title": "jau atlikta",
-          "tasks": [
-            {
-              "id": "f5aa1286-86cb-436b-94fc-9943e07d4a0b",
-              "content": "Rinkos analizė"
-            },
-            {
-              "id": "1371e26a-8718-48d5-8fd5-a8badffc55bc",
-              "content": "Misija, Vizija, Tikslas"
             },
             {
               "id": "34048161-8c6a-4f34-8aee-efd8de622b82",
@@ -141,6 +92,24 @@
             {
               "id": "7d3b0c0a-1f60-4c89-9c05-2f8f2d192a40",
               "content": "Nauji banneriai ir atributikos "
+            }
+          ]
+        },
+        {
+          "id": "59b204d0-aa9a-4fc2-a6d3-9602691eb0bf",
+          "title": "reikia atlikti",
+          "tasks": [
+            {
+              "id": "dd2dc2f0-f02c-4606-802a-988edb981f96",
+              "content": "Puslapio dizaino darbai"
+            },
+            {
+              "id": "ac561f7b-e0ce-42aa-9b00-5a86e574b29e",
+              "content": "Rasti prekių pakavimo tiekėją"
+            },
+            {
+              "id": "f880cd81-f2a5-435a-918a-8f5ffe2323fa",
+              "content": "Šventiniai išskirtiniai pasiūlymai"
             }
           ]
         }

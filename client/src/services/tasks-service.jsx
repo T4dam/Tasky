@@ -1,7 +1,6 @@
 /*eslint-disable*/
 import axios from 'axios';
 import store from '../store/index';
-// import * as usersSlice from '../store/users';
 
 const requester = axios.create({
   baseURL: 'http://localhost:5000/api/tasks',
@@ -19,8 +18,7 @@ const getLists = async () => {
   }).catch((err) => console.log(err));
 
   return data;
-//   const action = usersSlice.loadUsers({ users });
-//   store.dispatch(action);
+
 };
 
 const createList = async (title) => {

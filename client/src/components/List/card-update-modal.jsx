@@ -29,13 +29,9 @@ const CardUpdateModal = ({ isOpen, handleClose, cardContent, handleTextUpdate })
       const handleEditedText = (textValue) => {
         handleTextUpdate(textValue);
       }
-    //   const saveTextValue = () => {
-    //         // handleUpdatedText(textValue);
-
-    //     //   handleClose();
-    //   }
+   
     return (
-        // <StoreApi.Provider value={{ addNewCard }}>
+       
 
     <Modal
     open={isOpen}
@@ -57,9 +53,7 @@ const CardUpdateModal = ({ isOpen, handleClose, cardContent, handleTextUpdate })
           variant="contained"
           color="primary"
           type="submit"
-        //   onClick={()=> props.handleEditedText("something")}
-        //   disabled={cardContent === ''}
-        //   onMouseDown={handleSubmit}
+
           sx={{ width: 100, my: '8px', }}
         >
           Pridėti
@@ -74,7 +68,7 @@ const CardUpdateModal = ({ isOpen, handleClose, cardContent, handleTextUpdate })
 
     </Box>
     </Modal>
-            // </StoreApi.Provider>
+
 )};
 
 export default CardUpdateModal;

@@ -30,7 +30,6 @@ const AboutPage = () => (
           <figcaption>
             —Robin Sharma
             {' '}
-            {/* <cite>Brave New World</cite> */}
           </figcaption>
         </figure>
         <Typography sx={{ textAlign: 'justify', pb: '50px' }}>
@@ -54,11 +53,6 @@ const AboutPage = () => (
           užduočių planuoklę gali naudotis ir vartotojai neturintys užsienio kalbos žinių.
           {' '}
           <br />
-          {/* Projekto kūrimo metu buvo panaudoti
-          šie frameworkai: Material UI, Express js, Node js, React.
-          Darbų sąrašas padeda sutelkti dėmesį į šiuo metu svarbiausią
-          užduotį, padės motyvuoti save atliekant užduotis ir pagerins
-          jūsų atmintį. */}
 
         </Typography>
       </Box>

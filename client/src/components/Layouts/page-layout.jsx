@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Box, Typography, Fab, styled,
 } from '@mui/material';
-// import { Container } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -27,7 +26,6 @@ const PageLayout = () => {
   const [open, setOpen] = useState(false);
 
   const handleDrawerToggle = () => setOpen(!open);
-  // const handleDrawerOpen = () => setOpen(true);
   const handleDrawerClose = () => setOpen(false);
   return (
 
@@ -38,7 +36,6 @@ const PageLayout = () => {
       <NavbarContainer>
         <Navbar />
       </NavbarContainer>
-      {/* <Container sx={{ py: '10px' }}> */}
       <Box sx={{ flexGrow: 1 }}>
         <Outlet />
       </Box>
@@ -61,7 +58,6 @@ const PageLayout = () => {
         <Typography>Ⓒ Tasky 2022</Typography>
       </Footer>
 
-      {/* </Container> */}
     </Box>
   );
 };

@@ -226,7 +226,6 @@ const RegisterPage = () => {
             control={(
               <Checkbox
                 color="primary"
-              // Props provided by Formik
                 name="subscribed"
                 onChange={handleChange}
                 valuechecked="values.subscribed"

@@ -156,7 +156,6 @@ const BoardPage = () => {
       const newListIds = data.listIds;
       newListIds.splice(source.index, 1);
       newListIds.splice(destination.index, 0, draggableId);
-      // console.log('dragged a bit');
       await saveAllListsToDB();
       return;
     }

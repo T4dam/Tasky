@@ -30,9 +30,6 @@ const DrawerMobile = ({ open, handleDrawerClose }) => {
   const theme = useTheme();
   const navigate = useNavigate();
 
-  //   const handleRouteRegister = () => {
-  //     navigate(routes.LoginPage);
-  //   };
   return (
     <MUIDrawer variant="temporary" open={open} onClose={handleDrawerClose}>
       <DrawerHeader>

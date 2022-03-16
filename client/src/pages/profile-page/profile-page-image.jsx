@@ -4,7 +4,7 @@ import {
   styled,
   Fab,
 } from '@mui/material';
-// import AddAPhotoIcon from '@mui/icons-material/AddAPhoto';
+
 import AddPhotoAlternateIcon from '@mui/icons-material/AddPhotoAlternate';
 import UserService from '../../services/user-service';
 

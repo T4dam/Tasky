@@ -57,7 +57,7 @@
       "userId": "6dc1bf91-5daa-4039-aaef-530fcfb456b1",
       "lists": [
         {
-          "id": "45940d5a-1df1-4622-9262-0737d24e790c",
+          "id": "697a2b85-c3a8-4dc7-aa79-db4baa82a4c5",
           "title": "Brainstorm idėjos",
           "tasks": [
             {
@@ -75,7 +75,7 @@
           ]
         },
         {
-          "id": "9bb2b7e2-3b57-4a88-adb8-8ecc7ce18478",
+          "id": "3376a86c-d848-4cd4-8372-b7726c6abf2e",
           "title": "reikia atlikti",
           "tasks": [
             {
@@ -101,7 +101,7 @@
           ]
         },
         {
-          "id": "c3af974d-fc2d-4b38-b243-5084e19bcfe7",
+          "id": "11583fb8-4681-4d01-ad55-d7ecf1e161b2",
           "title": "šiuo metu atliekama",
           "tasks": [
             {
@@ -115,12 +115,16 @@
           ]
         },
         {
-          "id": "edc44121-de1f-4a60-abb8-b014d7ada4a0",
+          "id": "80bbd258-1ea7-4fbf-bbfd-44badbdf5337",
           "title": "jau atlikta",
           "tasks": [
             {
               "id": "f5aa1286-86cb-436b-94fc-9943e07d4a0b",
               "content": "Rinkos analizė"
+            },
+            {
+              "id": "1371e26a-8718-48d5-8fd5-a8badffc55bc",
+              "content": "Misija, Vizija, Tikslas"
             },
             {
               "id": "34048161-8c6a-4f34-8aee-efd8de622b82",
@@ -129,10 +133,6 @@
             {
               "id": "6ac1ec72-5f92-4dd6-be0c-62961268d90c",
               "content": "Landing page patalpinimas"
-            },
-            {
-              "id": "1371e26a-8718-48d5-8fd5-a8badffc55bc",
-              "content": "Misija, Vizija, Tikslas"
             },
             {
               "id": "aa34b59c-fbe6-46b6-b3da-c838b4f27acd",

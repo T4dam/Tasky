@@ -24,9 +24,7 @@ const OtherBoardsModal = ({ openOB, handleCloseOB }) => (
       onClose={handleCloseOB}
     >
       <Box sx={style}>
-        <Typography id="modal-modal-title" variant="h6" component="h2">
-          Pasirinkite naują šabloną
-        </Typography>
+        <Typography element="h6" variant="h6" sx={{ pb: '5px' }}>Pasirinkite naują šabloną</Typography>
         <OtherBoards handleCloseOB={handleCloseOB} />
       </Box>
     </Modal>

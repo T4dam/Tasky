@@ -12,6 +12,6 @@ router.post('/', authMiddleware, createList);
 router.post('/save-tasks', authMiddleware, saveTasks);
 
 router.patch('/', authMiddleware, updateList);
-// router.patch('/save-tasks', authMiddleware, updateTasks);
+
 router.post('/save-lists', authMiddleware, saveLists);
 export default router;

@@ -22,6 +22,7 @@
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
+ <img src="./client/public/demo.png" alt="Demo" width="auto" height="auto">
 
 Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
@@ -117,4 +118,4 @@ Tadas Delininkaitis- [@LinkedIn](https://www.linkedin.com/in/tadasdelininkaitis/
 
 <p align="right">(<a href="#top">Grįžti į viršų</a>)</p>
 
-[product-screenshot]: public/demo.png
+[product-screenshot]: <img src="./client/public/logo.png" alt="Logo" width="80" height="80">

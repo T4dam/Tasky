@@ -18,14 +18,13 @@
 
 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-
 <a href="https://github.com/T4dam/Tasky.git">
  <img src="./client/public/demo.png" alt="Demo" width="auto" height="auto">
 </a>
+<!-- ABOUT THE PROJECT -->
+## Apie projektą
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
+Ši sukurta darbų planuoklė - tai būdas padidinti produktyvumą, leidžiantis nieko nepamiršti, padedantis nustatyti užduočių prioritetus, efektyviai valdyti užduotis, išmintingai naudoti laiką ir pagerinti laiko valdymą. Pranašumas prieš kitas tokio tipo planuokles yra tai, jog ji yra nemokama ir pritaikyta Lietuvos auditorijai, todėl užduočių planuoklę gali naudotis ir vartotojai neturintys užsienio kalbos žinių.
 
 
 

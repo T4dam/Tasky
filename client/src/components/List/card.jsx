@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { useContext } from 'react';
 import {
   styled,
@@ -24,6 +25,7 @@ const CardyContainer = styled(Box)(({ theme }) => ({
   paddingTop: '3px',
 }));
 const Card = ({ card, index, listId }) => {
+  // const [word, setWord] = React.useState('bob');
   const [isOpen, setIsOpen] = React.useState(false);
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => {
@@ -36,10 +38,12 @@ const Card = ({ card, index, listId }) => {
   };
   return (
     <>
+      {/* <h1>{word}</h1> */}
       <CardUpdateModal
         isOpen={isOpen}
         handleClose={handleClose}
         cardContent={card.content}
+        // changeWord={(word) => setWord(word)}
       />
       <Draggable draggableId={card.id} index={index}>
         {(provided) => (

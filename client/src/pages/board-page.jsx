@@ -78,7 +78,7 @@ const BoardPage = () => {
 
   const deleteCard = async (index, listId) => {
     const newCards = data.lists[listId].cards.filter((card, i) => index !== i);
-    console.log(newCards)
+    // console.log(newCards)
     const list = data.lists[listId];
     list.cards = [...newCards];
 
@@ -98,10 +98,7 @@ const BoardPage = () => {
   }
 
   const deleteList = async (listId) => {
-    console.log("deleteList")
     const newListsIds = data.listIds.filter((list) => list !== listId);
-    console.log(newListsIds)
-    console.log(listId)
 
     let newLists = {};
     for (let i = 0; i < newListsIds.length; i++) {
@@ -113,18 +110,10 @@ const BoardPage = () => {
       lists: newLists,
       listIds: newListsIds
     };
-    console.log(newState);
     setData(newState);
     await saveAllListsToDB(newState);
   };
-  
-  //   const { listID, id } = action.payload;
-
-  //   const list = state[listID];
-
-  //   return { ...state, [listID]: { ...list, cards: newCards } };
-  
-  // }
+ 
   const onDragEnd = async (result) => {
     const {
       destination,
@@ -141,7 +130,7 @@ const BoardPage = () => {
       const newListIds = data.listIds;
       newListIds.splice(source.index, 1);
       newListIds.splice(destination.index, 0, draggableId);
-      console.log('dragged a bit');
+      // console.log('dragged a bit');
       await saveAllListsToDB();
       return;
     }
@@ -181,7 +170,7 @@ const BoardPage = () => {
         },
       };
       setData(newState);
-      console.log('dragged a bit');
+      // console.log('dragged a bit');
 
       await saveAllListsToDB()
     }
@@ -239,32 +228,6 @@ const BoardPage = () => {
 
       setData(newData);
 
-      // for (let i = 0; i < fetchedLists.length; i++) {
-      //   const list = fetchedLists[i];
-      //   const listId = createId();
-      //   listIds.push(listId);
-      //   transformedLists = {
-      //     ...transformedLists,
-      //     [listId]: {
-      //       id: listId,
-      //       title: list.title,
-      //       cards: list.tasks,
-      //   },
-      // };
-      // }
-
-      // const transformedData = { lists: transformedLists, listIds };
-      // setData(transformedData);
-
-      // // atgal i  db struktura:
-      // const dataForDB = [];
-      // for (let i = 0; i < transformedData.listIds.length; i++) {
-      //   const id = transformedData.listIds[i];
-      //   dataForDB.push({
-      //     title: transformedData.lists[id].title,
-      //     tasks: transformedData.lists[id].cards,
-      //   });
-      // }
 
     })();
   }, []);
@@ -303,20 +266,3 @@ const BoardPage = () => {
 
 export default BoardPage;
 
-
-
-
-
-// const listIds = [];
-// let transformedLists = {};
-// const taskBoard = res.boards.filter(taskBoard => taskBoard.userId === "1")[0].lists;
-// const data = taskBoard.map(i => {
-//   listIds.push(listId);
-//   const listId = createId()
-//   transformedLists = {
-//         ...transformedLists,
-//         [listId]: {
-//           id: listId,
-//           title: list.title,
-//           cards: list.tasks,
-// }

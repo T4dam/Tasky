@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import axios from 'axios';
 import store from '../store/index';
 // import * as usersSlice from '../store/users';

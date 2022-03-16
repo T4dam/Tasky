@@ -17,10 +17,10 @@
 </div>
 
 
-
 <a href="https://github.com/T4dam/Tasky.git">
  <img src="./client/public/demo.png" alt="Demo" width="auto" height="auto">
 </a>
+
 <!-- ABOUT THE PROJECT -->
 ## Apie projektą
 

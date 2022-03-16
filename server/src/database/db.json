@@ -57,7 +57,7 @@
       "userId": "6dc1bf91-5daa-4039-aaef-530fcfb456b1",
       "lists": [
         {
-          "id": "fe854d52-a477-46e1-9522-472c7ac03956",
+          "id": "45940d5a-1df1-4622-9262-0737d24e790c",
           "title": "Brainstorm idėjos",
           "tasks": [
             {
@@ -75,7 +75,7 @@
           ]
         },
         {
-          "id": "c9bb0b9b-7acf-41ff-af6e-8cfaa3ae62b0",
+          "id": "9bb2b7e2-3b57-4a88-adb8-8ecc7ce18478",
           "title": "reikia atlikti",
           "tasks": [
             {
@@ -101,7 +101,7 @@
           ]
         },
         {
-          "id": "51060465-2bec-4688-9d8a-6499a786c58a",
+          "id": "c3af974d-fc2d-4b38-b243-5084e19bcfe7",
           "title": "šiuo metu atliekama",
           "tasks": [
             {
@@ -115,7 +115,7 @@
           ]
         },
         {
-          "id": "7d47eb62-7177-44f6-bb05-3a04694a85d6",
+          "id": "edc44121-de1f-4a60-abb8-b014d7ada4a0",
           "title": "jau atlikta",
           "tasks": [
             {
